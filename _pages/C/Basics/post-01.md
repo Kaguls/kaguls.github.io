@@ -1,6 +1,7 @@
 ---
 title: "[C언어의 기본] #1"
 date: "2024-06-17"
+thumbnail: "/assets/img/thumbnail/C.png"
 ---
 
 ## C언어란?
