@@ -10,6 +10,8 @@ thumbnail: "/assets/img/thumbnail/C.png"
 
 여기서는 진법 자체의 이해를 해보고자 한다.
 
+![img](../../../assets/img/C/img.png)
+
 
 
 + 숫자로 기호에 포함이 된다! 
@@ -17,13 +19,6 @@ thumbnail: "/assets/img/thumbnail/C.png"
   : 10진수는 총 열 개의 숫자를 이용해서 수를 표현
 
   : 10진수는 총 열 개의 기호를 이용해서 수를 표현
-
-
-
-![캡처](/images/2024-01-07-C_language2/캡처.png)<br/>
-
-10진수를 기준으로 2진수 8진수 16진수는 저렇게 표현된다.
-
 
 
 * 컴퓨터는 0과 1로 데이터를 표현하니 2진수만 알면된다? 그건 아니다.
@@ -85,9 +80,9 @@ thumbnail: "/assets/img/thumbnail/C.png"
 
 그 비트가 8개가 묶으면 바이트라는 단위가 된다. <br/>
 
-<img src="/images/2024-01-07-C_language2/images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte.png" alt="images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte" style="zoom:50%;" /><br/>
+<img src="../../../assets/img/C/images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte.png" alt="images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte" style="zoom: 50%;" />
 
-사진과 같다고 보면된다. <br/>
+
 
 
 
@@ -183,8 +178,6 @@ int main(void)
 
 일단 정수의 가장 왼쪽에 존재하는 비트는 '부호비트'이다.
 
-![다운로드](/images/2024-01-07-C_language2/다운로드.jpg)<br/>
-
 1byte= 8bit 이니까 1바이트가 있다면 앞에 1개는 부호비트, 뒤는 데이터크기이다.<br/>
 
 양의 정수라면 부호비트에 0 , 음의 정수라면 부호비트에 1을 기입한다 <br/>
@@ -239,9 +232,6 @@ int main(void)
 
 
 
-![133D23574D9170A53B](/images/2024-01-07-C_language2/133D23574D9170A53B.jpg)<br/>
-
-
 
 컴퓨터가 실수를 이렇게 표기하기 때문에 넓은 범위를 표현할 수 있지만 오차가 발생하게 된다.<br/>
 
@@ -285,7 +275,7 @@ int main(void)
 
 하지만 비트 연산자를 통해 메모리 공간의 효율성을 높이고 연산의 수를 줄이는 요인이 된다.<br/>
 
-![img](/images/2024-01-07-C_language2/img.png)<br/>
+![image](../../../assets/img/C/image.png)
 
 
 
@@ -354,10 +344,6 @@ int main(void)
 ### ^연산자: 비트단위 XOR
 
 ^연산자는 두개의 비트가 서로 다른 경우에 1을 반환하는 연산으로서 배타적 논리합이라고 한다.
-
-![다운로드](/images/2024-01-07-C_language2/다운로드.png)<br/>
-
-회로로 표현하면 이렇게 된다.! <br/>
 
 ```c
 #include <stdio.h>
@@ -603,11 +589,7 @@ int main(void)
 
 ### 기본 자료형의 종류와 데이터의 표현범위
 
-
-
-![252ED03656A93D1C1D](/images/2024-01-07-C_language2/252ED03656A93D1C1D.png)<br/>
-
-
+<img src="../../../assets/img/C/img.jpg" alt="img" style="zoom:25%;" />
 
 C언어의 표준 기본 자료형은 이렇게 되어있다. <br/>
 
@@ -737,7 +719,7 @@ CPU가 처리하기 가장 적한 크기의 정수 자료형을 int형으로 정
 
 ### 실수를 표현 및 처리하기 위한 일반적 자료형의 선택
 
-![99EE144B5C4C4A0306](/images/2024-01-07-C_language2/99EE144B5C4C4A0306.png)<br/>
+<img src="../../../assets/img/C/img (1).png" alt="img (1)" style="zoom: 67%;" />
 
 실수형의 자료형은 이렇게 있다. <br/>
 
@@ -785,11 +767,7 @@ int main(void)
 
 char를 unsigned char로 처리하는 컴파일러도 있기 때문에 char 변수 선언해서 음의 정수를 선언하면 singed를 추가하기도 한다.<br/>
 
-
-
-<img src="/images/2024-01-07-C_language2/img (1).png" alt="img (1)" style="zoom:50%;" /> <br/>
-
-
+<img src="../../../assets/img/C/img (2).png" alt="img (2)" style="zoom: 50%;" />
 
 ### 문자의 표현방식과 문자를 위한 자료형
 
@@ -1103,7 +1081,7 @@ int main (void)
 }
 ```
 
-<img src="/images/2024-01-07-C_language2/70.png" alt="70" style="zoom: 67%;" /><br/>
+![접미사를_이용한_상수의_표현](../../../assets/img/C/접미사를_이용한_상수의_표현.png)<br/>
 
 위의 표를 확인해서 정수형, 실수형에 맞는 것을 사용하자! <br/>
 
@@ -1235,7 +1213,7 @@ double num1 = 5.15 + 19 // (두개의 피 연산자 5.15, 19)
 
 **피연산자의 자료형이 일치하지 않아서 발생하는 자동 형 변환은 데이터 손실을 최소화 하는 방향으로 진행된다**
 
-![캡처](/images/2024-01-07-C_language2/캡처.JPG) <br/>
+![img (3)](../../../assets/img/C/img (3).png)<br/>
 
 데이터 손실을 최소화 해야 되기 때문에 정수자료형 보다 실수 자료형이 앞선다 <br/>
 
@@ -1336,7 +1314,7 @@ printf("앞집 강아지가 말했다. \"멍~! 멍~!\"정말 귀엽다.")
 
 이렇게 해주면 출력이 되는 것을 알 수 있다  <br/>
 
-![캡처22](/images/2024-01-07-C_language2/캡처22.JPG) <br/>
+![img (4)](../../../assets/img/C/img (4).png) <br/>
 
 여기서 폼피드(/f), 수직탭(/v)는 프린터 출력을 위한 거기 때문에 이상한 문자가 출력이 된다..?<br/>
 
@@ -1363,7 +1341,7 @@ int main(void)
 
 ### 서식문자의 종류와 그 의미
 
-![그림25](/images/2024-01-07-C_language2/그림25.jpg)<br/>
+![서식문자의_종류](../../../assets/img/C/서식문자의_종류.png)<br/>
 
 
 
@@ -1503,7 +1481,13 @@ int main(void)
 }
 ```
 
-![321231231132](/images/2024-01-07-C_language2/321231231132.JPG)<br/>
+>  이름      전공학과   학년
+>
+> 김동수    전자공학   3
+>
+> 이을수    컴터공학   2
+>
+> 한선영    미술교육   4<br/>
 
 이름은 -로 왼쪽정렬되어있고 학과는 오른쪽 정렬 학년은 오른쪽 정렬이다 . <br/>
 
