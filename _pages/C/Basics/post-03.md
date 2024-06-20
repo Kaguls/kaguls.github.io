@@ -1080,7 +1080,9 @@ int main (void)
 }
 ```
 
-![접미사를_이용한_상수의_표현](../../../assets/img/C/접미사를_이용한_상수의_표현.png)<br/>
+![symbolic](../../../assets/img/C/symbolic.png)
+
+<br/>
 
 위의 표를 확인해서 정수형, 실수형에 맞는 것을 사용하자! <br/>
 
@@ -1340,7 +1342,9 @@ int main(void)
 
 ### 서식문자의 종류와 그 의미
 
-![서식문자의_종류](../../../assets/img/C/서식문자의_종류.png)<br/>
+![charshort](../../../assets/img/C/charshort.png)
+
+<br/>
 
 
 
