@@ -1,7 +1,9 @@
 ---
-title: "[C언어의 기본] #2"
-date: "2024-06-21"
+title: "[C언어의 기본] #1"
+date: "2024-06-17"
+thumbnail: "/assets/img/thumbnail/C.png"
 ---
+
 
 ## 데이터 표현방식의 이해
 
