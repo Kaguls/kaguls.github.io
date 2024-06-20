@@ -10,9 +10,6 @@ thumbnail: "/assets/img/thumbnail/C.png"
 
 여기서는 진법 자체의 이해를 해보고자 한다.
 
-![img](../../../assets/img/C/img.png)
-
-
 
 + 숫자로 기호에 포함이 된다! 
 
@@ -79,9 +76,6 @@ thumbnail: "/assets/img/thumbnail/C.png"
 컴퓨터를 하다보면 비트, 바이트에 대해서 많이 듣는다. 비트는 데이터의 최소단위이다. <br/>
 
 그 비트가 8개가 묶으면 바이트라는 단위가 된다. <br/>
-
-<img src="../../../assets/img/C/images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte.png" alt="images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte" style="zoom: 50%;" />
-
 
 
 
@@ -274,8 +268,6 @@ int main(void)
 비트연산자는 하드웨어 관련 프로그래밍에 활용된다<br/>
 
 하지만 비트 연산자를 통해 메모리 공간의 효율성을 높이고 연산의 수를 줄이는 요인이 된다.<br/>
-
-![image](../../../assets/img/C/image.png)
 
 
 
@@ -589,8 +581,6 @@ int main(void)
 
 ### 기본 자료형의 종류와 데이터의 표현범위
 
-<img src="../../../assets/img/C/img.jpg" alt="img" style="zoom:25%;" />
-
 C언어의 표준 기본 자료형은 이렇게 되어있다. <br/>
 
 "short와 int는 최소 2바이트 이되 int는 short와 크기가 같거나 더 커야 한다." <br/>
@@ -767,7 +757,6 @@ int main(void)
 
 char를 unsigned char로 처리하는 컴파일러도 있기 때문에 char 변수 선언해서 음의 정수를 선언하면 singed를 추가하기도 한다.<br/>
 
-<img src="../../../assets/img/C/img (2).png" alt="img (2)" style="zoom: 50%;" />
 
 ### 문자의 표현방식과 문자를 위한 자료형
 
@@ -1081,8 +1070,6 @@ int main (void)
 }
 ```
 
-![접미사를_이용한_상수의_표현](../../../assets/img/C/접미사를_이용한_상수의_표현.png)<br/>
-
 위의 표를 확인해서 정수형, 실수형에 맞는 것을 사용하자! <br/>
 
 
@@ -1340,8 +1327,6 @@ int main(void)
 
 
 ### 서식문자의 종류와 그 의미
-
-![서식문자의_종류](../../../assets/img/C/서식문자의_종류.png)<br/>
 
 
 
