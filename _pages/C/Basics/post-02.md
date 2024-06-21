@@ -10,8 +10,6 @@ thumbnail: "/assets/img/thumbnail/C.png"
 
 여기서는 진법 자체의 이해를 해보고자 한다.
 
-![img](../../../assets/img/C/img.png)
-
 
 
 + 숫자로 기호에 포함이 된다! 
@@ -79,10 +77,6 @@ thumbnail: "/assets/img/thumbnail/C.png"
 컴퓨터를 하다보면 비트, 바이트에 대해서 많이 듣는다. 비트는 데이터의 최소단위이다. <br/>
 
 그 비트가 8개가 묶으면 바이트라는 단위가 된다. <br/>
-
-<img src="../../../assets/img/C/images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte.png" alt="images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte" style="zoom: 50%;" />
-
-
 
 
 
@@ -274,8 +268,6 @@ int main(void)
 비트연산자는 하드웨어 관련 프로그래밍에 활용된다<br/>
 
 하지만 비트 연산자를 통해 메모리 공간의 효율성을 높이고 연산의 수를 줄이는 요인이 된다.<br/>
-
-![image](../../../assets/img/C/image.png)
 
 
 
@@ -589,7 +581,7 @@ int main(void)
 
 ### 기본 자료형의 종류와 데이터의 표현범위
 
-<img src="../../../assets/img/C/img.jpg" alt="img" style="zoom:25%;" />
+
 
 C언어의 표준 기본 자료형은 이렇게 되어있다. <br/>
 
@@ -719,7 +711,7 @@ CPU가 처리하기 가장 적한 크기의 정수 자료형을 int형으로 정
 
 ### 실수를 표현 및 처리하기 위한 일반적 자료형의 선택
 
-<img src="../../../assets/img/C/img (1).png" alt="img (1)" style="zoom: 67%;" />
+
 
 실수형의 자료형은 이렇게 있다. <br/>
 
@@ -767,7 +759,9 @@ int main(void)
 
 char를 unsigned char로 처리하는 컴파일러도 있기 때문에 char 변수 선언해서 음의 정수를 선언하면 singed를 추가하기도 한다.<br/>
 
-<img src="../../../assets/img/C/img (2).png" alt="img (2)" style="zoom: 50%;" />
+
+
+
 
 ### 문자의 표현방식과 문자를 위한 자료형
 
@@ -1072,7 +1066,7 @@ int main (void)
 >
 > 이럴때는 뒤에 f를 붙혀주면 된다고 한다! <br/>
 
-```
+```c
 int main (void)
 {
 	float num1: 5.789f;
@@ -1081,7 +1075,7 @@ int main (void)
 }
 ```
 
-![symbolic](../../../assets/img/C/symbolic.png)
+
 
 <br/>
 
@@ -1093,7 +1087,7 @@ int main (void)
 
 const를 이용하면 변수를 상수로 변신시켜버린다는거다! <br/>
 
-```
+```c
 int main (void)
 {
 	const int MAX=100; // MAX상수 변경불가
@@ -1105,7 +1099,7 @@ int main (void)
 
 이번에는 이름이 있는 상수: 심볼릭 상수<br/>
 
-```
+```c
 int main(void)
 {
 	const int MAX; //쓰레기 값 심볼릭 상수
@@ -1141,7 +1135,7 @@ int num2=3.1415; // double형 실수 3.1415를 int형으로 자동 형 변환 �
 
 즉 실수형을 정수형으로 변환하면 소수부의 손실이 발생한다는 것이다. <br/>
 
-```
+```c
 int num3 = 129; // 00000000 00000000 00000000 10000001
 char ch = num3; // int형 변수를 char변수인 1바이트로 변경해야된다 
 ```
@@ -1158,7 +1152,7 @@ int형 4바이트 변수를 char인 1바이트 변수로 바꾸게 되면 100000
 
 
 
-```
+```c
 #include <stdio.h>
 
 int main(void)
@@ -1187,7 +1181,7 @@ int main(void)
 
 "CPU가 가장 처리하기 적합한 크기의 정수 자료형은 int로 정의하고 int형 연산은 다른 자료형에 연산속도에 비해서 빠르다." <br/>
 
-```
+```c
 int main(void)
 {
 	short num1=15, num2=25;
@@ -1203,7 +1197,7 @@ int main(void)
 
 기본적인 산술연산에는 두 개의 피연산자가 필요하다. <br/>
 
-```
+```c
 double num1 = 5.15 + 19 // (두개의 피 연산자 5.15, 19)
 ```
 
@@ -1215,7 +1209,9 @@ double num1 = 5.15 + 19 // (두개의 피 연산자 5.15, 19)
 
 **피연산자의 자료형이 일치하지 않아서 발생하는 자동 형 변환은 데이터 손실을 최소화 하는 방향으로 진행된다**
 
-![img (3)](../../../assets/img/C/img (3).png)<br/>
+
+
+
 
 데이터 손실을 최소화 해야 되기 때문에 정수자료형 보다 실수 자료형이 앞선다 <br/>
 
@@ -1316,7 +1312,7 @@ printf("앞집 강아지가 말했다. \"멍~! 멍~!\"정말 귀엽다.")
 
 이렇게 해주면 출력이 되는 것을 알 수 있다  <br/>
 
-![img (4)](../../../assets/img/C/img (4).png) <br/>
+
 
 여기서 폼피드(/f), 수직탭(/v)는 프린터 출력을 위한 거기 때문에 이상한 문자가 출력이 된다..?<br/>
 
@@ -1343,7 +1339,7 @@ int main(void)
 
 ### 서식문자의 종류와 그 의미
 
-![charshort](../../../assets/img/C/charshort.png)
+
 
 <br/>
 
