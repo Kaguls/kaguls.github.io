@@ -8,6 +8,8 @@ thumbnail: "/assets/img/thumbnail/C.png"
 
 '컴퓨터는 2진수를 기반으로 데이터를 표현하고 연산을 진행한다'
 
+.![img](../../../images/post-02/img.png)
+
 여기서는 진법 자체의 이해를 해보고자 한다.
 
 
