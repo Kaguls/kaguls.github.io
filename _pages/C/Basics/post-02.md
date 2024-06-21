@@ -8,7 +8,7 @@ thumbnail: "/assets/img/thumbnail/C.png"
 
 '컴퓨터는 2진수를 기반으로 데이터를 표현하고 연산을 진행한다'
 
-.![img](../../../images/post-02/img.png)
+.<img src="../../../images/post-02/img.png" alt="img" style="zoom: 67%;" /> <br/>
 
 여기서는 진법 자체의 이해를 해보고자 한다.
 
@@ -80,7 +80,7 @@ thumbnail: "/assets/img/thumbnail/C.png"
 
 그 비트가 8개가 묶으면 바이트라는 단위가 된다. <br/>
 
-
+<img src="../../../images/post-02/images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte.png" alt="images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte" style="zoom:50%;" /> <br/>
 
 ### 문제
 
@@ -174,6 +174,8 @@ int main(void)
 
 일단 정수의 가장 왼쪽에 존재하는 비트는 '부호비트'이다.
 
+<img src="../../../images/post-02/images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte-1718951595811-3.png" alt="images_originxh_post_ae488faa-c0ba-4ed6-8baf-f7dc46ddd740_bit-byte" style="zoom:50%;" /><br/>
+
 1byte= 8bit 이니까 1바이트가 있다면 앞에 1개는 부호비트, 뒤는 데이터크기이다.<br/>
 
 양의 정수라면 부호비트에 0 , 음의 정수라면 부호비트에 1을 기입한다 <br/>
@@ -226,7 +228,7 @@ int main(void)
 
 그렇기 때문에 어떠한 정의된 수식이 정의된다. <br/>
 
-
+<img src="../../../images/post-02/img (1).png" alt="img (1)" style="zoom: 67%;" /> <br/>
 
 
 컴퓨터가 실수를 이렇게 표기하기 때문에 넓은 범위를 표현할 수 있지만 오차가 발생하게 된다.<br/>
@@ -270,6 +272,10 @@ int main(void)
 비트연산자는 하드웨어 관련 프로그래밍에 활용된다<br/>
 
 하지만 비트 연산자를 통해 메모리 공간의 효율성을 높이고 연산의 수를 줄이는 요인이 된다.<br/>
+
+
+
+<img src="../../../images/post-02/image.png" alt="image" style="zoom: 67%;" /><br/>
 
 
 
@@ -338,6 +344,10 @@ int main(void)
 ### ^연산자: 비트단위 XOR
 
 ^연산자는 두개의 비트가 서로 다른 경우에 1을 반환하는 연산으로서 배타적 논리합이라고 한다.
+
+<img src="../../../images/post-02/XOR-Gate.png" alt="XOR-Gate" style="zoom:67%;" /><br/>
+
+
 
 ```c
 #include <stdio.h>
@@ -583,6 +593,8 @@ int main(void)
 
 ### 기본 자료형의 종류와 데이터의 표현범위
 
+<img src="../../../images/post-02/img.jpg" alt="img" style="zoom: 15%;" /> <br/>
+
 
 
 C언어의 표준 기본 자료형은 이렇게 되어있다. <br/>
@@ -713,6 +725,8 @@ CPU가 처리하기 가장 적한 크기의 정수 자료형을 int형으로 정
 
 ### 실수를 표현 및 처리하기 위한 일반적 자료형의 선택
 
+![img (1)](../../../images/post-02/img (1)-1718951883234-11.png)<br/>
+
 
 
 실수형의 자료형은 이렇게 있다. <br/>
@@ -762,6 +776,8 @@ int main(void)
 char를 unsigned char로 처리하는 컴파일러도 있기 때문에 char 변수 선언해서 음의 정수를 선언하면 singed를 추가하기도 한다.<br/>
 
 
+
+<img src="../../../images/post-02/img (2).png" alt="img (2)" style="zoom: 50%;" /></br>
 
 
 
@@ -1081,6 +1097,10 @@ int main (void)
 
 <br/>
 
+![img (4)](../../../images/post-02/img (4).png)<br/>
+
+
+
 위의 표를 확인해서 정수형, 실수형에 맞는 것을 사용하자! <br/>
 
 
@@ -1211,7 +1231,7 @@ double num1 = 5.15 + 19 // (두개의 피 연산자 5.15, 19)
 
 **피연산자의 자료형이 일치하지 않아서 발생하는 자동 형 변환은 데이터 손실을 최소화 하는 방향으로 진행된다**
 
-
+<img src="../../../images/post-02/img (3).png" alt="img (3)" style="zoom: 67%;" /><br/>
 
 
 
@@ -1341,7 +1361,7 @@ int main(void)
 
 ### 서식문자의 종류와 그 의미
 
-
+![charshort](../../../images/post-02/charshort.png)<br/>
 
 <br/>
 
