@@ -1,5 +1,5 @@
 ---
-title: "로아생각#1:카던,BM역기획서"
+title: "로아생각#t:카던,BM역기획서"
 date: "2024-07-02"
 thumbnail: "/assets/img/thumbnail/lostarkimg.jpg"
 ---
@@ -250,7 +250,7 @@ UI부분은 설명을 넣어놨기 때문에 따로 설명하지 않겠다.
 
 
 
-# 비즈니스 모델
+## 비즈니스 모델
 
 
 
