@@ -1,6 +1,6 @@
 ---
-title: "로아생각#1:카던,BM역기획서"
-date: "2024-07-02"
+title: "로아생각#12:카던,BM역기획서"
+date: "2024-07-01"
 thumbnail: "/assets/img/thumbnail/lostarkimg.jpg"
 ---
 ## 로스트아크의 카오스던전과 비즈니스 모델 역기획서 
