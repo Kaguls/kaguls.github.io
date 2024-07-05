@@ -96,9 +96,374 @@ int main(void)
     while(num<3)
     {
         printf("Hi %d \n", num);
+        num++;
     }
+    ...
 }
 ```
+
+순서를 보면 순차적으로 내려오면서 변수 num이 0으로 초기화 된 후
+
+반복문 while에 진입하게 되며 조건인 num값이 3보다 작기에 Hi를 출력하고 num값을 출력
+
+그리고 num값이 +1이 되고 다시 while로 올라가면서 num값이 +1이 된다.
+
+그리고 다시 반복문에 들어가서 반복된다.
+
+num이 3이 되면 조건 불충분으로 반복하지 않고 밑으로 내려간다.
+
+
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+int main(void) 
+{
+	int dan=0, num=1;
+    printf("몇 단을 출력하나요?: ");
+    scanf("%d", &dan);
+    
+    while(num<10)
+    {
+        printf("%dx%d=%d \n", dan, num, dan*num);
+        num++;
+    }
+    return 0;
+}
+```
+
+이것은 내가 만약 구구단 5단을 보고싶으면 5을 입력하면 
+
+dan 변수에 내가 입력한 값으로 주소 대입
+
+
+
+num은 초기화 된 1값부터 9가 될때까지 반복하는 조건이다.
+
+그 안에는 반복이 되면 5단x 1~9 = 5*1~9 출력이 된다.
+
+
+
+이는 순서도가 있지만 여기서는 삽입하지 않도록 하겠다.
+
+
+
+### 무한루프
+
+```c
+while (1) //항상 True
+{
+    printf("%dx%d=%d \n", dan, num, dan*num);
+    num++;
+}
+```
+
+while(조건)에 1값인 True를 넣어주게 되면
+
+이 조건은 항상 True가 되어 무한으로 반복되는 상황이 나온다.
+
+
+
+이럴때는 break; 문을 통하여 빠져나갈 수 있고
+
+특정기능을 사용하기 위해서 일부러 무한루프를 사용하는 경우가 있다고 한다.
+
+
+
+## while문 연습 문제
+
+#### 1.프로그램 사용자로부터 양의 정수 하나를 받아 그 수만큼을 "Hello world"를 출력하는 프로그램의 제작
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int num; //변수 num 입력받는 정보를 선언
+	int standard = 0; // 변수 0 기준이되는 변수 standard 변수를 선언
+
+	printf("정수를 입력해주세요. \n");
+	scanf("%d", &num);
+
+	while (standard<num) //5를 입력하면 5보다 작은 경우 출력 조건식은 0을 기준으로 0<5다.
+	{
+		printf("Hello world!\n"); //반복명령 Hello World를 출력한다.
+		standard++; //1회 반복후 다시 while로 들어가면서 standard 변수에 +1을 해준다.
+	}
+	return 0;
+}
+```
+
+
+
+#### 2.프로그램 사용자로부터 양의 정수를 하나 입력 받은 후, 그 수 만큼의 3의 배수를 출력하는 프로그램을 작성하라.
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int num=0; //양의 정수를 입력받는 값
+	int dan=0; //3의 배수를 출력해야되니 3단인 dan변수 지정 및 1초기화
+
+	printf("정수를 입력해주세요\n"); //입력받을 변수 요청 출력
+	scanf("%d", &num); //입력받은 변수를 num으로
+
+	while (dan++ < num) //조건문 dan은 이행 후 1이 증가함. num보다 작은 조건 반복
+	{
+		printf("%d\n", 3 * dan); // 출력한다. 3*dan의 수만큼 1부터 시작.
+	}
+	return 0;
+}
+```
+
+변수 num와 dan을 초기화 시켜준 후 정수를 입력받는다. 그 후 그 값을 num 값에 대입
+
+반복문을 실행한다. 조건문에서 dan은 조건문을 이행 후 1이 증가하고 num보다 작은 조건을 반복한다.
+
+ dan은 1부터 시작한다. 왜냐하면 dan++에서 printf로 넘어가면 1이 증가하기 때문이다.
+
+3*dan을 해준다 (3의배수)
+
+
+
+그러면 3*내가 입력한 정수의 숫자만큼 출력이 된다.
+
+아마 이쪽은 num과 dan값이 0이니
+
+```c
+int num, dan=0;
+```
+
+으로 한줄을 더 줄일 수 있을 것이다.
+
+
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int num = 0; //양의 정수를 입력받는 값
+	int dan = 1; //3의 배수를 출력해야되니 3단인 dan변수 지정 및 1초기화
+
+	printf("정수를 입력해주세요\n"); //입력받을 변수 요청 출력
+	scanf("%d", &num); //입력받은 변수를 num으로 저장하는데 &num+1을 하면 num변수 주소에 +1을 더한값으로 메모리 위치가 아닌 다른 메모리 위치에 저장되어 있다.
+	//그래서 변수 자체의 주소를 넘거야 하기 때문에 &num+1을 하기 보다는 하단 while 조건문의 num+1을 해준다.
+
+	while (dan < num +1) //dan보다 num이 크다는 조건
+	{
+		printf("%d\n", 3 * dan); // 출력한다. 3*dan의 수만큼 1부터 시작.
+		dan++; //dan이 1씩 증가되어감.
+	}
+	return 0;
+}
+```
+
+입력받은 정수를 num값을 대입.
+
+
+
+반복문을 실행하는데 조건은 dan보다 num+1이 클때까지
+
+dan은 1씩 증가한다.
+
+
+
+내가 3을 입력하면 dan은 1 num은 4기준으로 반복문이 진행된다.
+
+즉 1~3이니 3번을 3*dan을 실행하기에 3 6 9 가 된다.
+
+
+
+#### 3.프로그램 사용자로부터 계속해서 정수를 입력 받는다. 그리고 그 값을 계속해서 더해 나간다. 이러한 작업은 사용자가 0을 입력할 때 까지 계속되며 0을 입력하면 입력된 모든 정수의 합을 출력하고 종료한다.
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int all=0;
+	int num=1;
+
+	while (num != 0)
+	{
+		printf("정수를 입력해주세요(0이 나오면 종료합니다)\n");
+		scanf("%d", &num);
+		all += num;
+	}
+
+	printf("입력된 수의 합은 : %d \n", all);
+	return 0;
+}
+```
+
+변수를 선언 후 
+
+조건문에서 num!=0 변수 num가 0이 아닐때 까지 반복한다.
+
+
+
+while문안에 scanf가 있기 때문에 반복되고 all이라는 변수에 누적된다.
+
+
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int all = 0; //합을 저장할 수 있는 변수
+	int num = 0; //입력받는 값의 수
+	int num2 = 0; //수를 담는 그릇
+
+	printf("더하고자 하는 값의 수를 입력하세요 \n");
+	scanf("%d", &num);
+
+	int i = 1; //반복 변수 지정
+	while (i <= num)
+	{
+		printf("%d번째 수를 입력해주세요: ", i);
+		scanf("%d", &num2);
+		all += num2; // 변수 all에 num2의 값을 더하고 그 값을 다시 all에 저장하는 것이다. all = all + num2. 
+		i++; 
+	}
+
+	printf("입력된 수의 합은: %d \n", all);
+	return 0;
+}
+```
+
+비효율적인거 같지만 내가 수를 지정해서 저장하는 것을 한번 해봤다.
+
+변수 all, num, num2를 지정하고 내가 더하고자 하는 값의 수를 입력한다.
+
+
+
+반복변수를 넣어 while문에 내가 더하고자하는 값만큼 반복한다. 
+
+내가 더하고자한 값은 num2에 들어가고 all에 누적된 후 반복 변수가 1증가한다.
+
+
+
+#### 4.프로그램 사용자로부터 입력 받은 숫자에 해당하는 구구단을 출력하되, 역순으로 출력하는 프로그램을 작성해보자.
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int num = 9;
+	int dan = 0;
+
+	printf("구구단 몇단을 출력하실건가요?\n");
+	scanf("%d", &dan);
+
+	while (num > 0)
+	{
+		printf("%d x %d = %d\n", dan, num, dan * num);
+		num--;
+	}
+	return 0;
+}
+```
+
+num 변수를 9로 초기화하고, dan을 0으로 초기화한 후
+
+내가 출력하고자 하고 싶은 구구단의 단을 입력하면 dan에 입력
+
+
+
+반복문이 실행되며 조건은 num값이 0보다 클때다.
+
+(dan) * (num) = dan *num 이 반복출력되며 1회 반복할때마다 num값은 1씩 줄어든다
+
+
+
+#### 5.프로그램 사용자로부터 입력 받은 정수의 평균을 출력하는 프로그램을 작성하되 다음 두 가지 조건을 만족한다.
+
+"먼저 몇개의 정수를 입력할 것인지 묻고 그 수만큼 입력받는다."
+
+"평균 값은 소수점 이하까지 계산하여 출력한다"
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int ea = 0; //입력받는 정수의 갯수
+	int num = 0; //정수의 입력
+	int all = 0; //모든 정수의 입력을 담는 그릇
+	int i = 1; //반복변수
+
+	printf("입력받을 정수의 개수를 입력해주세요 \n");
+	scanf("%d", &ea);
+
+	while (i < ea+1)
+	{
+		printf("%d 번째 정수를 입력해주세요 \n", i);
+		scanf("%d", &num);
+		i++;
+		all += num; //입력받은 모든 값을 all에 더해준다.
+	}
+	printf("입력받은 정수의 평균은 : %f \n", (double)all / ea); 
+	return 0;
+}
+```
+
+각각 변수들을 선언해준다. 
+
+그 후 내가 입력받을 정수의 개수를 입력 해준 후
+
+갯수만큼 반복되며 모든 값을 all에 저장된다.
+
+마지막에 평균값을 출력하는데 소수점 까지 출력해야되니까
+
+int형인 all을 double 실수형으로 바꿔준 후 갯수만큼 나눠준다. 그후 출력 %f을 해준다.
+
+
+
+### while문의 중첩
+
+while문의 중첩은 말 그대로 while문안에 마트료시카처럼 while문이 있는거다. 
+
+즉, 조건 반복 안에 조건 반복이 있는것이다.
+
+
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int cur = 2;
+	int is = 0;
+
+	while (cur < 10) //cur2부터 시작해서 9까지 반복 총 8회 반복한다.
+	{
+		is = 1; //새로운 단의 시작 is선언
+		while (is < 10) //is 1부터 9까지 9회반복
+		{
+			printf("%dx%d=%d \n", cur, is, cur * is); //출력한다. nxm=nm이다. n=2->9 , m=1~9, n*m
+			is++; //프린트 출력후 이 행을 벗어나면 is에 +1 다시 is=2로 간다.
+		}
+		cur++; //is가 10이 되면 cur +1을 진행하고 다시 9행으로 간다.
+	}
+	return 0;  //이 행은 총 cur 8 * is 9 = 72개의 답을 얻을 수 있다.
+} 
+```
+
+
+
+
 
 
 
