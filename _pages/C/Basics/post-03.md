@@ -635,6 +635,669 @@ int main(void)
 
 
 
+변수로 별의 개수 즉, 5행이니까 <5를 조건을 걸어준다. 별의 개수가 5개 이하면 반복 [ 0,1,2,3,4]
+
+소 반복문에는 별의 개수보다 o이 적으면 반복하는 것이다. 
+
+맨 처음은 0=0이기에 바로 종료 후 *을 한개 출력 그후는 0<1이니 ㅇ이 한개 앞에 추가 되어 반복된다.
+
+그러면 문제와 같은 답이 도출된다.
+
+```C
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int star_ea = 0;
+	int o_ea = 0;
+	int ea = 0;
+
+	printf("몇 층으로 올리실 건가요?\n");
+	scanf("%d", &ea);
+
+	while (star_ea < ea) //별의 개수가  ea만큼 반복한다.
+	{
+		while (o_ea < star_ea) //o의 개수보다 *의 개수가 더 적으면 실행한다.
+		{
+			printf("o"); //먼저 o를 출력
+			o_ea++; //o값 +1
+		} //o값+1했는데 도 *보다 작은지 체크
+		o_ea = 0; //출력해준다.
+		printf("* \n"); //*출력
+		star_ea++; //star 카운트 +1
+	}
+	return 0;
+}
+```
+
+요즘 응용해서 내가 원하는 층만큼 올려보는 거로 응용해봤다.
+
+입력받은 층수만큼 별의 개수가 나올떄까지 반복하게 된다.
+
+
+
+### do~ while문에 의한 문장의 반복
+
+do ~while문은 while문과 다른점은 '반복조건'을 뒤에 작성하는 것이다.
+
+즉, **무조건 최소 한번 이상은 실행되는 구조**다.
+
+
+
+```c
+do
+{ 
+    printf("Hello world! \n");
+    num++;
+}while(num<3);
+```
+
+
+
+일단 한번 실행 후 조건만큼 반복한다.
+
+
+
+그러다보니 순서만 바꾼것인데 while문과 do while문으로 서로 교체할 수 있다.
+
+```c
+while(num<10)
+{
+    printf("%d x %d = %d \n",dan,num,dan*num);
+    num++;
+}
+```
+
+```c
+do
+{
+    printf("%d x %d = %d \n",dan,num,dan*num);
+	num++;
+}while(num<10);
+```
+
+자세히 보면 거의 순서의 차이라고 볼 수 있다.
+
+
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int total = 0, num = 0;
+
+	do
+	{
+		printf("정수 입력(0 to Quit): ");
+		scanf("%d", &num);
+		total += num; //누적
+	} while (num != 0);
+	printf("합계 %d\n", total);
+	return 0;
+}
+```
+
+이것처럼 일단 한번 입력한 후에 앞으로 더 입력할 수 있을지 없는지 결정을 지어야되는 경우 같을 때
+
+do~while이 필요하다.
+
+
+
+## while문과 do~while문 익숙해지기 문제
+
+#### 일단 한번 받고 값을 더 받을건지 안받을건지 결정하는 문제를 기반으로 재 구현해보자
+
+1. 변수 num값을 적절히 초기화해서 첫 번째 반복조건의 검사결과가 '참'이 되게 한다.
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int total = 0, num = 1;
+
+	while (num != 0) //num값이 0인지 아닌지 체크
+	{
+		printf("정수 입력(0 to Quit): ");
+		scanf("%d", &num); //num값을 입력받음 주소 저장
+		total += num;  //누적
+	} //0이 아니면 반복 루프구간
+	printf("합계 %d\n", total);
+	return 0;
+}
+```
+
+변수 total과 num을 각각 0과 1로 초기화 해준다.
+
+
+
+while문으로 num값이 0인지 아닌지 체크해주고 0아니면 반복문을  계속 루프한다.
+
+0이 나오면 끝나고 합계를 알려준다.
+
+
+
+2. while문에 진입하기 전에 프로그램 사용자로부터 값을 1회 입력 받게 한다.
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int total = 0, num = 0;
+
+	printf("정수 입력하세요(0이면 종료): ");
+	scanf("%d", &num);
+	total += num; //0이면 최종값은 0으로 진행
+
+	while (num != 0) // 0을 받으면 그냥 아래
+	{
+		printf("정수 입력하세요(0이면 종료): ");
+		scanf("%d", &num);
+		total += num;
+	}
+	printf("합계는: %d \n", total);
+	return 0;
+}
+```
+
+진입하기전에 일단 정수값을 받은 후 누적을 한번 시킨다.
+
+그 후 입력 한 값이 0이면 누적값은 0으로 종료된다.
+
+원래 코드가 do~ while이었는데 변경시키니 1회 입력이면 do ~while이 좋다는 것을 알았다.
+
+
+
+#### 0이상 100이하의 정수 중에서 짝수의 합을 출력하는 프로그램을 구현해보자.
+
+단 do~while 기반이어야 하며, 덧셈의 결과는 2550 이어야한다.
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int num = 0;
+	int sum = 0;
+
+	do //일단 실행한다.
+	{
+		sum += num; // 0부터 누적값을 구하기
+		num = num + 2; // num+2값을 해준다 0,2,4,....100
+	} while (num <= 100); //100까지 반복한다.
+
+	printf("합은 : %d \n", sum);
+	return 0;
+}
+```
+
+변수를 초기화 후 일단 한번 실행을 시켜준다.
+
+0부터의 누적값을 구한 후 num+2를 통해 짝수를 선별한다.
+
+그 값을 100까지 반복하고 합을 나타낸다.
+
+```c
+int main(void)
+{
+	int num = 0;
+	int sum = 0;
+
+	while (num <= 100)
+	{
+		sum += num; // 0부터 누적값을 구하기
+		num = num + 2; // num+2값을 해준다 0,2,4,....100
+	}
+	printf("합은 : %d \n", sum);
+	return 0;
+}
+```
+
+do ~while을 while문으로 바꾸면 순서처럼 이렇게 바뀌게 된다. 굉장히 쉽다.
+
+
+
+```c
+int main(void)
+{
+	int sum = 0;//합을 받을 정수
+	int start = 0;//시작 할 정수
+	int end = 0;//종료할 정수
+
+	printf("시작할 정수를 입력해주세요");
+	scanf("%d",&start);
+	
+	printf("끝낼 정수를 입력해주세요");
+	scanf("%d", &end);
+
+	do
+	{
+		sum += start; //start부터 누적값 구하기
+		if (start % 2 == 0) //start가 짝수일때
+			start += 2; //start 값에 +2를 해준다.
+		else start += 2; //아니면 start에 2씩 누적한다.
+	} while (start <= end);
+	printf("총 합은 %d입니다.\n", sum);
+	return 0;
+}
+```
+
+이번에는 내가 직접 범위를 지정하여 결과를 추출한다.
+
+근데 모든 값이 2씩 누적이라 의미가 없는 것 같다.;
+
+
+
+```c
+int main(void)
+{
+	int sum = 0;
+	int start = 0;
+	int end = 0;
+	char num[10];
+
+	printf("시작 범위를 입력해주세요");
+	scanf("%d", &start);
+
+	printf("끝낼 범위를 입력해주세요");
+	scanf("%d", &end);
+
+	printf("짝수를 구할건가요?, 홀수를 구할건가요?: ");
+	scanf("%s", num);
+
+	if (strcmp(num, "짝수") == 0)
+		printf("짝수로 인식되었습니다.\n");
+	else if (strcmp(num, "홀수") == 0)
+		printf("홀수로 인식되었습니다.\n");
+	else
+	{
+		printf("값을 다시 확인하세요.");
+	}
+
+	int i = start;
+	while (i <= end)
+	{
+		if (strcmp(num, "짝수") == 0)
+		{
+			while (i <= end && i % 2 == 0)
+			{
+				sum += i;
+				i += 2;
+			}
+		}
+		else if (strcmp(num, "홀수") == 0)
+		{
+			while (i <= end)
+			{
+				if (i % 2 != 0)
+				{
+					sum += i;
+				}
+				i++;
+			}
+		}
+		else
+		{
+			printf("값을 다시 확인해주세요 \n");
+			return 0;
+		}
+	}
+	printf("%d ~ %d범위내에서 %s를 선택하여 총합은 %d입니다.\n", start, end, num, sum);
+	return 0;
+}
+```
+
+이번에는 위의 작품에서 범위를 나타내고 짝수와 홀수에 따라서 값이 다르게 했다.
+
+범위를 입력 후 짝수와 홀수를 선택하며 짝수가 홀수가 아니면 값을 다시 확인하라는 문구가 뜨게한다.
+
+
+
+새로운 변수에 시작 범위 값을 넣어주고 
+
+
+
+짝수일시)그 값이 끝 범위보다 작거나 같고 2로 나눴을 때 0이 만족되면
+
+start값을 누적시켜준다. 그후 +2를 더 누적시킨 후 끝 범위까지 반복한다.
+
+
+
+홀수일시) 그 값이 끝 범위보다 작거나 같고 2로 나눴을 때 0이 아니면
+
+start값을 누적시켜준다. 그후 +1를 더 누적시킨 후 끝 범위까지 반복한다
+
+
+
+짝수도 홀수도 아니면 값을 다시 확인해달라고 안내가 뜨며 종료되고
+
+조건이 만족하면 범위와 짝수홀수의 선택 그리고 총합을 보여준다.
+
+
+
+#### while문의 중첩 예제를 do~while문으로 재구성해보자.
+
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+
+int main(void)
+{
+	int cur = 2;
+	int is = 0;
+
+	do //while 자리에 do
+	{
+		is = 1; 
+		do
+		{
+			printf("%dx%d=%d \n", cur, is, cur * is); //출력한다. nxm=nm이다. n=2->9 , m=1~9, n*m
+			is++; //프린트 출력후 이 행을 벗어나면 is에 +1 다시 is=2로 간다.
+		}while (is < 10) 
+		cur++; //is가 10이 되면 cur +1을 진행하고 다시 9행으로 간다.
+        printf("\n");
+	}while(cur<10);
+	return 0;  //이 행은 총 cur 8 * is 9 = 72개의 답을 얻을 수 있다.
+} 
+```
+
+while문의 위치에 do가 오고 괄호 끝에 while(조건)을 넣어준다.
+
+
+
+## for문에 의한 문장의 반복
+
+일단 말하기 전에 반복문은 크게 2가지가 있다고 한다.
+
+첫 번째, 횟수가 정해져 있는 상황. 
+
+두 번째, 횟수가 정해지지 않은 상황 (조건)
+
+
+
+for문은 while문을 편하게 쓰기위해 압축된 틀과 같다.
+
+
+
+"Hi문자를 3회 출력하고 싶습니다."
+
+
+
+```c
+int main(void)
+{
+	int num = 0; //초기식
+	while (num < 3)  //조건식
+	{
+		printf("Hi~");
+		num++; //증감식
+	}
+	....
+}
+```
+
+기존의 while문의 경우 우리는 이렇게 사용했다.
+
+주석에 따라서 초기식 조건식 증감식이 있는데 이것을 그냥 for 형식의 틀에 맞게 옮겨주면 된다.
+
+
+
+for (초기식; 조건식; 증감식)
+
+```c
+int maiint main(void)
+{
+	for (int num = 0; num < 3; num++)
+		printf("Hi~");
+}
+```
+
+이렇게 순서대로 넣으면 while문과 같게 된다. 가독성이 높아졌다.
+
+
+
+1.int num=0 / 2=num <3 / 3.Printf() / 4.num++
+
+가 있다면 1이후 2 3 4가 반복으로 이루어 진다는 것이다.
+
+
+
+그러면 무조건 for문을 쓰는가? 그건 아니다.
+
+반복의 횟수가 정해졌다면 for문이며 값을 기다리는 상황이면 while문이 더 자연스럽다.
+
+
+
+### for문 기반의 다양한 예제
+
+```c
+int main(void)
+{
+	int total = 0;
+	int i, num;
+	printf("0부터 num까지의 덧셈, num은? ");
+	scanf("%d", &num);
+
+	for (i = 0; i < num + 1; i++) 
+		total += i;
+
+	printf("0부터 %d까지 덧셈결과: %d \n", num, total);
+	return 0;
+}
+```
+
+이렇게 하면 for문 덕분에 가독성이 올라가고 편하며 코드를 조금 더 줄일 수 있지만 두 가지 스타일을 익히자.
+
+
+
+```c
+for (int i=0; i<num +1; i++)
+```
+
+처럼 바뀔 수 있는 것이다. 초기화가 안에 들어가는 것
+
+
+
+```c
+int main(void)
+{
+	double total = 0.0;
+	double input = 0.0;
+	int num = 0;
+
+	for( ; input>=0.0 ; )
+	{
+		total += input;
+		printf("실수 입력(minus to quit) : ");
+		scanf("%lf", &input);
+		num++;
+	}
+	printf("평균: %f \n", total/(num - 1));
+	return 0;
+}
+```
+
+이 예제는 입력하는 실수의 평균값을 출력하며 작은 음의 실수 값이 입력될 떄 까지 계속되고 마지막 0은 제외한다.
+
+
+
+여기서 자세히보면 초기식과 증감식이 없는데 진행되었다.! for문은 필요없다면 채우지 않아도 된다.
+
+이때 조건문이 비어버리면 조건이 없어서 모든 값이 True가 된다.
+
+
+
+```c
+```
+
+
+
+ex) for( ; ;) <- 처럼 말이다.
+
+
+
+## 문제 for문의 활용
+
+#### 프로그램 사용자로부터 두 개의 정수를 입력 받아, 두 정수를 포함하여 그 사이에 존재하는 정수들의 합을 계산하는 프로그램
+
+단 두 번째 수가 더 커야 한다는 조건
+
+```c
+int main(void)
+{
+	int start1=0;
+	int start2=0;
+	int total=0;
+
+	printf("두개의 정수를 입력해주세요: ");
+	scanf("%d %d", &start1, &start2);
+
+	for (total = 0; start1 <= start2; start1++)
+		total += start1;
+
+	printf("합계는 %d \n", total);
+	return 0;
+
+}
+```
+
+2개의 정수를 입력 받은 후,  누적값을 0으로 만든다.
+
+그 후 start1 변수가 start보다 작거나 같은  때,
+
+start이 1씩 커진 후 누적한다.
+
+
+
+```c
+int main(void)
+{
+	int start = 0;
+	int end = 0;
+	int total = 0;
+
+	printf("두개의 정수를 입력해주세요: ");
+	scanf("%d %d", &start, &end);
+
+	if (start > end || start == end) //만약에 start가 end보다 크거나 같은 경우
+	{
+		int temp = start; //정수형 temp에 임시로 start값을 넣는다.
+		start = end; //end를 start에 삽입한다.
+		end = temp; //temp값을 end에 삽입한다.
+	}
+	//이를 통해서 교환이 이루어지는 코드가 완성되었다.
+
+	for (total = 0; start <= end; start++)
+		total += start;
+
+	printf("합계는 %d \n", total);
+	return 0;
+}
+```
+
+추가 연습으로 만약 start 가 end보다 크다고 해도 여유공간을 통해 저글링 하듯 옮겼다.
+
+
+
+#### 다음 수식인 계승(팩토리얼)을 계산하는 프로그램을 작성해보자
+
+```c
+n! = 1*2*3....*n;
+```
+
+이 수식에 맞는 프로그램을 작성해보자.
+
+
+
+```c
+int main(void)
+{
+	int start;
+	int factorial;
+	int multiplied=1;
+
+	printf("입력 받고자하는 n!의 값을 입력해주세요: ");
+	scanf("%d", &factorial);
+
+	for (start=1; start <= factorial; start++)
+		multiplied *= start ;
+
+	printf("%d!은 %d입니다.\n", factorial, multiplied);
+	return 0;
+}
+```
+
+변수 초기화 후, 몇 팩토리얼을 할지 결정한다.
+
+
+
+그후 start 가 팩토리얼보다 작거나 같을 때 까지 반복한다.
+
+그리고 그 값을 누적으로 곱해준다.
+
+
+
+
+
+### for문의 중첩
+
+while문의 중첩처럼 for문에도 중첩을 할 수 있다.
+
+```c
+int main(void)
+{
+	int cur, is;
+
+	for (cur = 2; cur < 10; cur++)
+	{
+		for (is = 1; is < 10; is++)
+			printf("%dx%d=%d \n", cur, is, cur * is);
+		printf("\n");
+	}
+	return 0;
+}
+```
+
+구구단처럼 초기화 값과 범위에 의하여 2~ 9 *1~9 최대 81를 얻을 수 있다
+
+
+
+```c
+int main(void)
+{
+	int cur = 2;
+	int is = 0;
+
+	while (cur < 10)
+	{
+		int is = 1;
+		while (is < 10)
+		{
+			printf("%dx%d=%d \n", cur, is, cur * is);
+			is++;
+		}
+		cur++;
+		printf("\n");
+	}
+	return 0;
+}
+```
+
+그 값을 while문으로 바꾸면 초기식 조건식 증감식을 분활해주면 된다.
+
+
+
+이렇듯 while, do~while, for에 대해서 배웠고,
+
+반복문은 중요하니 자주 연습하고 꾸준히 해야겠다.!
+
 
 
 
