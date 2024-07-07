@@ -30,7 +30,7 @@ thumbnail: "/assets/img/thumbnail/C.png"
 
 
 
-### while문은 반복을 명령하는 문장
+## while문은 반복을 명령하는 문장
 
 ```c
 while(num<3) //while(조건)
@@ -87,7 +87,7 @@ while(num<5)
 
 
 
-### while문의 흐름
+## while문의 흐름
 
 ```c
 int main(void)
@@ -430,7 +430,7 @@ int형인 all을 double 실수형으로 바꿔준 후 갯수만큼 나눠준다.
 
 
 
-### while문의 중첩
+## while문의 중첩
 
 while문의 중첩은 말 그대로 while문안에 마트료시카처럼 while문이 있는거다. 
 
@@ -1246,7 +1246,7 @@ int main(void)
 
 
 
-### for문의 중첩
+## for문의 중첩
 
 while문의 중첩처럼 for문에도 중첩을 할 수 있다.
 
@@ -1300,25 +1300,1066 @@ int main(void)
 
 
 
+# 조건적 실행과 흐름의 분기 (IF, IF else)
+
+흐름의 분기가 필요한 이유?
+
+: 기존의 배운 계산기는 덧셈하고 뺄셈하고 곱셈하고 나눗셈을 했다면 이제는 선택을 하여 내가 필요한 것을 한다.
+
+
+
+## if문을 이용한 조건적 실행
+
+```c
+if (num1 > num2) //num1이 num2보다 크다면 아래 조건문을 실행
+{
+	printf("A \n");
+	pritnf("B \n");
+}
+```
+
+if(조건) => 조건문의 내용이 True면 내용 문을 실행한다.
+
+if문은 컴퓨터가 이렇게 써도 한줄로 이해한다. 컴파일러는 한 문장으로 이해하기 때문이다.
+
+
+
+**우리가 if else문은 세로로 길게써도 컴파일러는 if ~ else 라고 보이는 거다.**
+
+
+
+```c
+int main(void)
+{
+	int num;
+	printf("정수입력");
+	scanf("%d", &num);
+
+	if (num < 0)
+		printf("0보다 작다\n");
+	if (num > 0)
+		printf("0보다 크다\n");
+	if (num == 0)
+		printf("0이다\n");
+
+	return 0;
+}
+```
+
+입력받은 num변수의 값의 조건에 따라서 출력되는 값이 다른 것이다.
+
+
+
+num=1이라고 하면 첫 번째 (num<0)에서 False후 밑으로 간다.
+
+(num>0)으로 간후 True로 printf문을 출력
+
+(num == 0)으로 간후 false후 밑으로 간다.
+
+
+
+```c
+//계산기 프로그램
+
+int main(void)
+{
+	int opt;
+	double num1, num2;
+	double result;
+
+	printf("1.덧셈 2.뺄셈 3.곱셈 4.나눗셈 \n");
+	printf("선택?");
+	scanf("%d", &opt);
+	printf("두 개의 실수입력: ");
+	scanf("%lf %lf", &num1, &num2);
+
+	if (opt == 1)
+		result = num1 + num2;
+	if (opt == 2)
+		result = num1 - num2;
+	if (opt == 3)
+		result = num1 * num2;
+	if (opt == 4)
+		result = num1 / num2;
+
+	printf("결과: %f \n", result);
+	return 0;
+}
+```
+
+이렇게 보면 좋은 것 같지만 문제점이 발생한다.
+
+**if문이 모두 다 한번씩 거쳐간다는 점이다. 즉 이건 효율적이지 못하다..**
+
+
+
+```c
+//1~100범위 내 3의 공배수 또는 4의 공배수를 출력
+
+int main(void)
+{
+	int num;
+
+	for (num = 1; num < 100; num++)
+	{
+		if (num % 3 == 0 || num % 4 == 0) // || 연산자보다 == 연산자 우선순위가 높음
+			//이러면 두개의 연산 결과에 대해서 ||연산을 수행
+			printf("3또는 4의 배수: %d \n", num);
+	}
+	//이러면 {}를 없앨 수 있음 printf는 하나의 if문 이기 떄문이다.
+	return 0;
+}
+```
+
+
+
+## if ~else문을 이용한 흐름의 분기
+
+```c
+//if ~else문
+
+if (num1 > num2) //참이면 아래 문 실행
+{
+	printf("num1이 num2보다 크다. \n");
+	pritnf("%d > %d \n", num1, num2);
+}
+else //거짓이면 아래 문을 실행
+{
+	printf("num1이 num2보다 크지않다.\n");
+	printf("%d <= %dn, num1, num2");
+}
+```
+
+맨 처음에 말한 것처럼, if 문 1개 else 문 1개로 보이는게 아니라
+
+if ~ else문 한개로 한 문장이다.
+
+
+
+```c
+int main(void)
+{
+	int num;
+	printf("정수입력: ");
+	scanf("%d", &num);
+
+	if (num < 0)
+		printf("입력 값은 0보다 작다\n");
+	else
+		printf("입력 값은 0보다 작지 않다\n");
+}
+```
+
+값이 True면 if문 내의 printf값을 출력.
+
+그 외 값은 else를 실행한다.
+
+
+
+## if... else if... else의 구성
+
+```c
+if (조건1)
+
+else if (조건2)
+
+... (무한 조건n else if)
+
+else (모든 조건 불만족)
+
+조건 만족시 밑에 조건은 모두 무시한다.
+```
+
+기존의 if문과 다른 점은 else if에서 조건이 만족되면 밑의 else if문을 실행하지 않는다.
+
+
+
+조건3이 만족한다는 기준)
+
+if(조건1) false => else if(조건2) false => else if (조건3) True => 탈출
+
+
+
+```c
+//계산기 프로그램의 if..else if..else
+
+int main(void)
+{
+	int opt;
+	double num1, num2;
+	double result;
+
+	printf("1. 덧셈 2.뺄셈 3.곱셈 4.나눗셈 \n");
+	printf("선택? ");
+	scanf("%d", &opt);
+	printf("두 개의 실수 입력: ");
+	scanf("%lf %lf", &num1, &num2);
+
+	if (opt == 1)
+		result = num1 + num2;
+	else if (opt == 2)
+		result = num1 - num2;
+	else if (opt == 3)
+		result = num1 * num2;
+	else if (opt == 4)
+		result = num1 / num2;
+	else
+	{
+		printf("1~4 사이의 값이 아닙니다.");
+		exit(1);
+	}
+
+
+	printf("결과: %f \n", result);
+	return 0;
+```
+
+기존의 계산기 프로그램은 if문을 모두 실행하였다.
+
+하지만 else if문으로 건너뛰는 특성으로 인하여 연산의 수가 줄어들었다.
 
 
 
 
 
+## if ... else if .. else의 진실
+
+```c
+if (num > 0)
+	printf("A \n");
+else if (num > 0)
+	printf("B \n");
+else
+	printf("C \n")
+```
+
+```c
+else  if (num>0)
+
+else
+
+	if (num>0) 
+```
+
+두 개를 비교하면 else if에 if else(IF else(if ...))인 것이다.
+
+
+
+## 조건 연산자: 피 연산자가 세 개인 '삼 항 연산자'
+
+if~else문의 대신으로 한 줄로 표현하는 문이다.
+
+마치 n=n+m을 n+=M 같은 것이다.
+
+
+
+(num1>num2) ? (num1) : (num2);
+
+
+
+```c
+int num3= (num1>num2) ? (num1) : (num2);
+```
+
+이런 조건식이 있다고 해보자.
+
+
+
+변수 num3은 조건식(num1>num2)을 보고
+
+True면 num3=num1
+
+false면 num3=num2
+
+
+
+**조건연산자는 코드를 간결하게 해준다.**
+
+
+
+```c
+int main(void)
+{
+	int num, abs;
+	printf("정수 입력: ");
+	scanf("%d", &num);
+	
+	abs = num > 0 ? num : num * (-1);
+	printf("절댓값: %d \n", abs);
+	return 0;
+}
+```
+
+이것처럼 if ~ else문을 간략하게 뽑을 수 있다.
+
+
+
+## 문제 if~else문의 활용
+
+#### 첫 번째. 1이상 100미만의 정수 중에서 7의 배수와 9의 배수를 출력하는 프로그램 (단 7과 9의 공배수는 한번만 출력해야한다.)
+
+조건체크 : 1이상 100미만의 정수 / 7의 배수 / 9의배수 / 7과 9의 공배수
+
+
+
+```c
+int main(void)
+{
+	int count;
+
+	for (count = 1; count < 100; count++)
+	{
+		if (count % 7 == 0 || count % 9 == 0)
+			printf("%d\n", count);
+	}
+	return 0;
+}
+```
+
+
+
+추가. 만약에 7과 9의 공부새만 2번 출력하려면 어떻게 해야될까?
+
+```c
+int main(void)
+{
+	int count;
+	int detection = 0 ; //7과 9의 공배수를 판별하는 함수
+
+	for (count = 1; count < 100; count++)
+	{
+			if (count % 7 == 0 && count % 9 == 0) //최상위 조건 : 공배수 출력
+			{
+				printf("%d\n", count);
+				printf("%d\n", count);
+				detection = 1;
+			}
+			if (count % 7 == 0 && detection == 0)
+				printf("%d\n", count);
+			if (count % 9 == 0 && detection == 0)
+				printf("%d\n", count);
+
+			if (detection = 1 && count > 63)
+			{
+				if (count % 7 == 0)
+					printf("%d\n", count);
+				if (count % 9 == 0)
+					printf("%d\n", count);
+			}
+	}
+	return 0;
+}
+```
+
+일단 먼저 7과 9의 공배수를 출력하는데 있어
+
+
+
+```c
+if (count % 7 == 0 && count % 9 == 0)
+   {
+	printf("%d\n", count);
+	printf("%d\n", count);
+	detection = 1;
+	}
+```
+
+이 것을 삽입해주는데 2번 출력하는게 생각이 안나서 printf를 두 번 했다.
+
+그리고 공배수가 나왔는지 안나왔는지 detection 변수를 통해 공배수가 나오면 1을 올려준다.
+
+
+
+```c
+if (count % 7 == 0 && detection == 0)
+	printf("%d\n", count);
+if (count % 9 == 0 && detection == 0)
+	printf("%d\n", count);
+```
+
+일단 공배수가 7, 9이면서 공배수가 나오지 않는 AND조건으로 넣는다.
+
+
+
+```c
+if (detection = 1 && count > 63)
+	{
+	if (count % 7 == 0)
+		printf("%d\n", count);
+	if (count % 9 == 0)
+		printf("%d\n", count);
+	}
+```
+
+공배수가 한번 이상 출력되었으며, 63이상일때
+
+7공배수 9공배수를 출력한다.
+
+
+
+이게 없으면 63이후가 안나오기 때문에 추가했다.
+
+
+
+#### 두 번째, 두 개의 정수를 받아 두 수의 차를 출력하는 프로그램을 구현해보자.
+
+단, 무조건 큰 수에서 작은 수를 뺸 결과를 출력한다. 7 5면 2 , 5 7이여도 2다. 
+
+
+
+조건: 두 개의 정수, 두 수의 차, 큰 수에서 작은 수 (작은 틀 한개 추가)
+
+```c
+int main(void)
+{
+	int num1, num2;
+	int subtract;
+
+	printf("두 개의 수를 입력 해주세요: ");
+	scanf("%d %d", &num1, &num2);
+
+	//subtract= (num1 - num2);
+	if (num1 > num2)
+		subtract = num1 - num2;
+
+	else
+		subtract = num2 - num1;
+	
+	printf("빼기 값은: %d 입니다 \n", subtract);
+	return 0;
+}
+```
+
+두 개의 수를 입력받아 num1이 크면 num1 -num2 아니면 num2 -num1다.
+
+
+
+#### 세 번째, 학생의 전체 평균점수에 대한 학점을 출력하는 프로그램을 작성하자.
+
+90점이상은 A, 80점 이상은 B, 70점 이상은 C, 50점 이상은 D 그리고 그 미만은 F.
+
+순서대로 국, 영,수 점수를 받아 평균을 출력한다.
+
+
+
+조건체크: 국영수점수, 평균점수, 학점별 조건
+
+```c
+int main(void)
+{
+	int language, english, math;
+	double average;
+
+	printf("순서대로 국어, 영어, 수학 점수를 입력해주세요: ");
+	scanf("%d %d %d", &language, &english, &math);
+	average = (language + english + math) / 3.0;
+	printf("평균값은: %f \n", average);
+
+	if (average >= 90.0)
+		printf("학점: A");
+	else if (average >= 80.0)
+		printf("학점: B");
+	else if (average >= 70.0)
+		printf("학점: C");
+	else if (average >= 60.0)
+		printf("학점: D");
+	else
+		printf("재수강: F");
+    
+	return 0;
+}
+```
+
+if ~ else if로 조건을 넣어준다.
+
+조금 아쉬운건 excel의 count(범위)처럼 개수를 세듯
+
+변수의 개수를 자동으로 세주는 함수가 있다면
+
+```c
+average = (language + english + math) / (변수 갯수 함수)
+```
+
+이렇게 하면 좀 더 좋을 것 같다. 
+
+
+
+#### 네 번째, 위의 문제2  if ~else문을 이용해서 해결하면 그것을 조건 연산자로 변환해보자.
+
+```c
+int main(void)
+{
+	int num1, num2;
+	int subtract;
+
+	printf("두 개의 수를 입력 해주세요: ");
+	scanf("%d %d", &num1, &num2);
+
+	subtract = (num1<num2)? num2-num1: num1-num2;
+
+	printf("빼기 값은: %d 입니다 \n", subtract);
+	return 0;
+}
+```
+
+if ~ else문이 간단해졌다.
+
+
+
+# 반복문의 생략과 탈출 continue & break
+
+반복문인 (while, do~while, for)문에서 쓰는 것으로 continue와 break가 있다.
+
+생략 continue / 탈출 break 다.
+
+
+
+## Break 빠져나간다. 탈출
+
+```c
+int main(void)
+{
+	int sum = 0, num = 0;
+
+	while (1) //항상 True
+	{
+		sum += num; //sum = sum+num
+		if (sum > 5000) //sum이 5000이상이면 발동
+			break; // 종료 (break는 자신을 감싸는 가장 가까운 위치 반복문 하나 빠져나감)
+		num++; 
+	}
+
+	printf("sum: %d \n", sum); //sum =1+2+3...n 100까지 5050 99면 
+	printf("num: %d \n", num); //num =숫자
+	return 0;
+}
+```
+
+위의 예제를 보면 break문을 통해서 if문을 빠져나올 수 있다!
+
+if문이 실행되면 break가 실행되면서 if문이 바로 종료된다.
+
+
+
+주의: if의 빠져나가는 것이 아닌, 가장 가까이 감싸는 반복문을 하나 탈출하는 것이다.
+
+
+
+```c
+결과값은 sum: 5050 num: 10
+```
+
+왜냐하면 sum값은 1+2+3...n
+
+num값은 1+1+1+1...n
+
+
+
+등차수열로 구해보자
+$$
+등차수열 
+S_n=n(a_1+a_n)/2 이다.
+$$
+
+$$
+S_n=100(1+100)/2 \\ =100*101/2 \\ =10100/2 \\5050
+$$
+
+즉 C언어로 등차수열을 구현한 것이다.
 
 
 
 
 
+## continue 반복조건으로 되돌아가자. 생략
+
+break문과 마찬가지로 반복문 안에 삽입이 되는데, 조건이 만족하면 그냥 뒤에 문장을 생략하고 반복문으로 가는 것이다.
+
+
+
+```c
+//컨티뉴 예제
+
+int main(void)
+{
+	int num;
+	printf("start! ");
+
+	for (num = 1; num < 20; num++)
+	{
+		if (num % 2 == 0 || num % 3 == 0) //2의 배수 3의 배수는 
+			continue; // 여기서 다시 위로 올려버림
+		printf("%d", num); //2의 3의 배수는 작동x
+	}
+	printf("end! \n");
+	return 0;
+}
+```
+
+1~20 사이의 범위에서 2와 3의 배수가 아닌 것을 출력한다.
+
+if문의 조건이 참이면 continue를 진행시켜서 밑을 생략하고 올리니 printf를 생략한다.
+
+
+
+## 문제 continue &break 활용
+
+#### 첫 번째. 구구단을 출력하되 짝수 단(2단 4단 6단 8단)만 출력되도록 하자.
+
+추가로 2단은 2X2까지 4단은 4X4까지 6단은 6X6까지 8단은 8X8까지 출력되도록 만들자.
+
+
+
+조건체크: 짝수 단을 출력 / 2단은 ... 8단은 8X8까지 출력
+
+```c
+int main(void)
+{
+	int dan;
+	int su;
+
+	for (dan = 1; dan < 10; dan++)
+	{
+		if (dan % 2 != 0)
+			continue; //실행이 안되게 위로 올려 버리기
+
+		for (su = 1; su < 10; su++)
+		{
+			if (su > dan)
+				break;
+			printf("%d x %d = %d 입니다\n", dan, su, dan * su);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+```
+
+일단 for문을 통해서 구구단의 큰 틀인 n단의 반복문을 만들어준다.
+
+1조건을 넣는다 (짝수 단이면 출력 아니면 미출력) `if(dan&2!=0)` 이다.
+
+그리고 작은 틀은 nXm에서 m단의 반복문을 만들어준다.
+
+2조건을 넣는다 (2=2x2 4=4x4이니까 단x수로 보면 수는 단을 초월할 수없기에 `if(su>dan)`을 넣는다)
 
 
 
 
 
+#### 두 번째, 다음 식을 만족하는 모든 A와 Z를 구하는 프로그램을 작성해보자.
+
+
+$$
+AZ\\
++ZA\\
+-----\\
+99
+$$
+ 가능한 모든 수의 조합을 시도하기 위해 반복문을 조합한다.
+
+```c
+int main(void)
+{
+	int A, Z; // A와 Z 변수
+	int sum; //A+Z의 합
+
+	for (A = 0; A < 10; A++) //A는 0부터, 10이하, 1반복시 +1 A의 경우의 수대입
+	{
+		for (Z = 0; Z < 10; Z++) //Z는 0부터, 10이하, 1반복시+1 Z의 경우의 수 대입
+		{
+			if (A == Z) //A와 Z가 같다면 중복방지 
+				continue; // 조건문으로 올려버린다. Z++후에 Z<10 진행 5+5 4+4는 불가능
+			//없어도 실행과 값은 같은데 아마 연산의 차이가 나는 듯. 중복방지
+			sum = (A * 10 + Z) + (Z * 10 + A); // (1~9*10+1~9)AZ + (1~9 * 10 + 1~9)ZA 경우의 수
+			if (sum == 99) //sum이 99면 
+				printf("%d%d+%d%d=%d\n", A, Z, Z, A, sum); //printf 출력
+		}
+	}
+	return 0;
+}
+```
+
+A를 1~9까지 범위에서 1증가 , Z 1~9까지 범위에서 1증가
+
+그리고` if(A==Z) continue`로 중복을 방지해준다. 
+
+AZ+ZA인 `sum = (A * 10 + Z) + (Z * 10 + A)`를 넣는다.
 
 
 
+**만약) AB+BA=88이면**
+
+```c
+int main(void)
+{
+	int A, B;
+	int sum;
+
+	for (A = 0; A < 10; A++)
+	{
+		for (B = 0; B < 10; B++)
+		{
+			sum = (A * 10 + B) + (B * 10 + A);
+			if (sum == 88)
+				printf("%d%d+%d%d=%d\n", A, B, B, A, sum);
+		}
+	}
+	return 0;
+}
+```
+
+이렇게 처리할 수 있다. 근데 ` if(A==Z) continue`을 넣으면 44+44가 출력되지 않아서 제거했다.
 
 
 
+**만약) 만약 ABC+DEF=999**
 
+```c
+int main(void)
+{
+	int A, B, C;
+	int D, E, F;
+	int sum;
+
+	for (A = 0; A < 10; A++){
+		for (B = 0; B < 10; B++){
+			for (C = 0; C < 10; C++){
+				for (D = 0; D < 10; D++) {
+					for (E = 0; E < 10; E++) {
+						for (F = 0; F < 10; F++) {
+							sum = (A * 100 + B * 10 + C) + (D * 100 + E * 10 + F);
+								if (sum == 999)
+								printf("%d%d%d+%d%d%d=%d \n", A, B, C, D, E, F, sum);
+						}
+					}
+				}
+			}
+		}
+
+	}
+	return 0;
+}
+```
+
+for문안에 for문안에 for문안에.. ;;
+
+이런 다중 중첩일때 중괄호를 들여쓰기 하면 오히려 가독성이 구려서 for 마지막에 넣어줬다.
+
+
+
+# switch문에 의한 선택적 실행과 goto문
+
+
+
+swtich문은 if...else if...else와 유사한 측면이 있다.
+
+하지만 switch문은 if...else if..else문에 비해서 제한적이다.
+
+
+
+## switch문의 구성과 기본기능
+
+```c
+int main(void)
+{
+	int num;
+	printf("1이상 5이하의 정수입력: ");
+	scanf("%d", &num);
+
+	switch(num)
+	{
+	case 1: //case 1영역 1입력시 여기서부터 실행
+		printf("1은 ONE\n"); 
+		break;  //빠져나감! 근처의 반복문 switch 종료
+	case 2:
+		printf("2은 TWO\n");
+		break;
+	case 3:
+		printf("3은 THREE\n");
+		break;
+	case 4:
+		printf("4은 FOUR\n");
+		break;
+	case 5:
+		printf("5은 FIVE\n");
+		break;
+	default:
+		printf("I don't know! \n");
+	}
+	return 0;
+}
+```
+
+
+
+내가 입력한 num값을 받아서 그것을 switch에 넣어서 그 값에 따라서 case문의 내용을 출력한다.
+
+case문 내부에 break가 없으면 그 밑으로 쭉 실행으로 하는 것이고
+
+break;가 존재시 거기까지만 진행된다.
+
+
+
+switch(2)라고 하면 case 1 -> case 2로 가는 것이 아닌 한번에 case2로 간 후 실행되고 break문으로
+
+가장 가까운 반복문 swtich를 탈출한다. break문이 없다면 2부터 쭈욱 실행된다.
+
+
+
+#### switch문의 일반적 형태
+
+```c
+int main(void)
+{
+    ...
+    switch(n)
+    {
+     case 1:
+     printf("A1");
+     pritnf("A2";
+     break;
+     case 2:
+     printf("B1");
+     pritnf("B2";
+     break;
+     default
+     	printf("default");
+    }
+            ...
+}
+```
+
+기본 적 형태로 n에 값에 따라서 내가 실행할 case영역이 다른 것이다.
+
+
+
+## break문을 생략한 형태의 switch 문 구성
+
+해당 case문만 실행되도록 switch문의 동작방식을 결정하면 일일히 break를 안달아도 된다.
+
+```c
+int main(void)
+{
+	char sel;//문자 받음
+	printf("M 오전, A 사과, E 엘프 \n");
+	printf("입력: ");
+	scanf("%c", &sel);
+
+	switch (sel)
+	{
+	case 'M':
+	case 'm':
+		printf("Morning \n");
+		break;
+	case 'A':
+	case 'a':
+		printf("Apple \n");
+		break;
+	case 'E':
+	case 'e':
+		printf("elf \n");
+		break; //불필요한 break
+	}
+	return 0;
+}
+```
+
+이번에는 기존과 다르게 char형 변수를 지정하여
+
+내가 입력한 문자를 받아들여 출력하는데 대소문자에 대한 case를 부여하여 실행시킬 수 있게 한다.
+
+
+
+**break문이 삽입되어서 유용한 경우가 있고 break문이 들어가지 않아서 유용한 경우가 있다.**
+
+
+
+## switch vs if...else if..else
+
+둘은 차이가 있다.
+
+**"분기의 경우의 수가 많아지면 가급적 switch문으로 구현한다. - 가독성"**
+
+
+
+```c
+//if..else if..else
+
+if (n == 1)
+	printf("A");
+else if (n == 2)
+	printf("B");
+else if (n == 3)
+	printf("C");
+else
+	printf("D");
+```
+
+```c
+//switch
+
+switch (n) {
+case 1:
+	printf("A");
+	break;
+case 2:
+	printf("B");
+	break;
+case 3:
+	printf("C");
+	break;
+default
+	printf("D");
+}
+```
+
+switch문이 더 간결해보이는 것을 할 수있다.
+
+
+
+실제로 if..else if..else문은 비선호한다고 하며
+
+switch문을 선호하기에 switch문의 가독성 향상을 위한 코드를 작성하도록 노력해보자!
+
+
+
+**"하지만 switch는 한계가 있다. 표현하기 애매하면 if ...else if ..else를 사용해야되는 것이다."**
+
+
+
+```c
+//if..else if..else
+
+if (0<=n && n<10)
+	printf("10");
+else if (10 <= n && n < 20)
+	printf("1020");
+else if (20 <= n && n < 30)
+	printf("2030");
+else
+	printf("40");
+```
+
+```c
+switch (n) {
+case ?:
+	printf("10");
+	break;
+case ?:
+	printf("20");
+	break;
+case ?:
+	printf("30");
+	break;
+	default
+		printf("40");
+}
+```
+
+이렇게 보면 조건이 복잡하여 switch 문으로 표현하기 어렵다.
+
+이런 경우에는 분기의 수가 많아도 switch문을 고집할 필요 없다.
+
+
+
+## 문제 switch 문으로 변경하기
+
+if...else if ...else문과 switch문은 서로 교체가 가능하듯 해보자!
+
+```c
+int main(void)
+{
+	int n;
+	printf("0이상의 정수를 입력해주세요");
+	scanf("%d", &n);
+
+	switch (n/10) { //10을 나눠숴 0=1~9 / 1=10~19 / ...
+	case 0: //값이 0이면
+		printf("0이상 10미만입니다.");
+		break;
+	case 1: //값이 1이면
+		printf("10이상 20미만입니다.");
+		break;
+	case 2:
+		printf("20이상 30미만입니다.");
+		break;
+	default:
+		printf("40이상 및 재입력");
+	}
+	return 0;
+}
+```
+
+이렇게 조건을 잘 설정할 수 있으면 swtich!!
+
+
+
+## 마지막으로 goto에 대해서 소개하자.
+
+goto문은 마검과 같고, 실제로 잘 사용하지 않는다고한다.
+
+
+
+```c
+int main
+{
+	..
+	rabbit:
+	...
+	goto rabbit;
+	...
+}
+```
+
+rabbit이라는 레이블을 지정하고 가다가 `goto rabbit`를 하면 rabbit으로 이동하는 것이다.
+
+
+
+```c
+int main(void)
+{
+	int num;
+	printf("입력: ");
+	scanf("%d", &num);
+
+	if (num == 1)
+		goto ONE;
+	else if (num == 2)
+		goto TWO;
+	else
+		goto OTHER;
+
+ONE:
+	printf("1입력\n");
+	goto END;
+TWO:
+	printf("2입력\n");
+	goto END;
+OTHER:
+	printf("다른 값\n");
+
+END:
+	return 0;
+}
+```
+
+이러면 입력하는 것에 따라서 내가 설정한 레이블로 간다.
+
+
+
+이러면 단점들이 보인다
+
+첫 번째. 가독성이 구려진다 (왜냐? 점프하는 것으로 넘어가서 봐야되니까)
+
+두 번째. 버그가 발생할 수 있다
+
+세 번째. 절차저리의 역전이 발생한다.
+
+
+
+=Joat다.
+
+
+
+그냥 이런 것만 알고있고 쓰지말자.
