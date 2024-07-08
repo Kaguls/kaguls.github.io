@@ -1,3 +1,7 @@
+---
+published : false
+---
+
 # Manage blog comments with `Giscus`
 
 <img src="https://opengraph.githubassets.com/4f866d5b634e7cd5422af77f8dbfb6d48dd288b7c5c18326544c1973210320ed/giscus/giscus" height="240px" align="center"/>
