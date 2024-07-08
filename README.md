@@ -1,12 +1,3 @@
-
-<a href="https://jekyll-themes.com/byanko55/jekyll-theme-satellite">
-  <img
-    src="https://img.shields.io/badge/featured%20on-JT-red.svg"
-    height="20"
-    alt="Jekyll Themes Shield"
-  />
-</a>
-
 # Satellite🛰️ - Jekyll blog theme
 An emotional and adorable blog theme powered by ***Jekyll***. 
 
