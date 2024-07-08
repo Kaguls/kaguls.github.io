@@ -6,6 +6,7 @@ tags:
 date: "2024-02-04"
 thumbnail: "/assets/img/thumbnail/sample.png"
 bookmark: true
+published : false
 ---
 
 This section deals with the step-by-step process of how to write and publish posts on your site.
