@@ -12,10 +12,10 @@ github_username: https://kaguls.github.io/
 #facebook_username: facebook
 
 # External API
-giscus_repo: "byanko55/jekyll-theme-satellite"
-giscus_repoId: "R_kgDOJ6fqWg"
-giscus_category: "Q&A"
-giscus_categoryId: "DIC_kwDOJ6fqWs4Cc7p7"
+giscus_repo: "Kaguls/kaguls.github.io"
+giscus_repoId: "R_kgDOMJ2k7A"
+giscus_category: "Comments"
+giscus_categoryId: "DIC_kwDOMJ2k7M4CgqE6"
 goatcounter_code: "blogcounterminwoo"
 google_analytics: "G-EHYYKLCXX5"
 
