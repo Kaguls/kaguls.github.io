@@ -1,5 +1,5 @@
 ---
-title: "백준 C언어 단계별 풀이1"
+title: "백준 C언어 단계별 풀이2"
 date: "2024-07-16"
 thumbnail: "/assets/img/thumbnail/baekjooncover.png"
 
