@@ -5,7 +5,7 @@ thumbnail: "/assets/img/thumbnail/baekjooncover.png"
 
 ---
 
-# 백준 C언어 단계별 풀이 : 입출력과 사칙연산
+# 백준 C언어 단계별 풀이 : 입출력과 사칙연산 #변경
 
 printf를 넣으면 오류가 떠서 
 
