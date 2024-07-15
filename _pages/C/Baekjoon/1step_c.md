@@ -1,5 +1,5 @@
 ---
-title: "백준 C언어 단계별 풀이4"
+title: "백준 C언어 단계별 풀이"
 date: "2024-07-15"
 thumbnail: "/assets/img/thumbnail/baekjooncover.png"
 
@@ -12,6 +12,10 @@ thumbnail: "/assets/img/thumbnail/baekjooncover.png"
 printf를 넣으면 오류가 떠서 
 
 visual studio로 일단 컴파일후 확인용 printf문은 제거했다.
+
+
+
+![1step](../../../images/1step_c/1step.PNG)
 
 
 
@@ -351,6 +355,8 @@ int main(void) {
 
 
 
+![Q1](../../../images/1step_c/Q1.png)
+
 
 
 입력 : 첫째 줄에 (1)의 위치에 들어갈 세 자리 자연수가, 둘째 줄에 (2)의 위치에 들어갈 세자리 자연수가 주어진다.
@@ -527,6 +533,10 @@ int main(void) {
 
 
 이거는 이스케이프 시퀀스를 물어보는 것이다.
+
+
+
+![escape](../../../images/1step_c/escape.PNG)
 
 
 
