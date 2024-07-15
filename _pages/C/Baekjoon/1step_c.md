@@ -1,9 +1,11 @@
 ---
-title: "백준 C언어 단계별 풀이3"
-date: "2024-07-16"
+title: "백준 C언어 단계별 풀이4"
+date: "2024-07-15"
 thumbnail: "/assets/img/thumbnail/baekjooncover.png"
 
 ---
+
+
 
 # 백준 C언어 단계별 풀이 : 입출력과 사칙연산
 
