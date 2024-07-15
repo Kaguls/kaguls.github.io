@@ -13,7 +13,7 @@ visual studio로 일단 컴파일후 확인용 printf문은 제거했다.
 
 
 
-![1단계](../../../images/1step_c/1단계.PNG)
+![1step](../../../images/1step_c/1step.PNG)
 
 
 
@@ -351,7 +351,7 @@ int main(void) {
 
 문제 : (세 자리 수) × (세 자리 수)는 다음과 같은 과정을 통하여 이루어진다.
 
-![f5NhGHVLM4Ix74DtJrwfC97KepPl27s (1)](../../../images/1step_c/f5NhGHVLM4Ix74DtJrwfC97KepPl27s (1).png)
+![Q1](../../../images/1step_c/Q1.png)
 
 입력 : 첫째 줄에 (1)의 위치에 들어갈 세 자리 자연수가, 둘째 줄에 (2)의 위치에 들어갈 세자리 자연수가 주어진다.
 
@@ -616,3 +616,6 @@ int main() {
 
 
 
+
+
+[def]: ../../../images/1step_c/1step.PNG
