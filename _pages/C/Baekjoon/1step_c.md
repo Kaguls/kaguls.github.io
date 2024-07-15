@@ -1,5 +1,5 @@
 ---
-title: "백준 C언어 단계별 풀이 #변경"
+title: "백준 C언어 단계별 풀이1"
 date: "2024-07-16"
 thumbnail: "/assets/img/thumbnail/baekjooncover.png"
 
@@ -610,12 +610,4 @@ int main() {
 >
 > 언젠간 이 과정이 나를 개발자로 만들어 줄 수 있겠지! 
 >
-> 생각하는 과정이 재미있으니 더 힘내자.
-
-
-
-
-
-
-
-[def]: ../../../images/1step_c/1step.PNG
+> 생각하는 과정이 재미있으니 더 힘내자
