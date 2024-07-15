@@ -1,5 +1,5 @@
 ---
-title: "백준 C언어 단계별 풀이2"
+title: "백준 C언어 단계별 풀이3"
 date: "2024-07-16"
 thumbnail: "/assets/img/thumbnail/baekjooncover.png"
 
@@ -10,10 +10,6 @@ thumbnail: "/assets/img/thumbnail/baekjooncover.png"
 printf를 넣으면 오류가 떠서 
 
 visual studio로 일단 컴파일후 확인용 printf문은 제거했다.
-
-
-
-![1step](../../../images/1step_c/1step.PNG)
 
 
 
@@ -351,7 +347,9 @@ int main(void) {
 
 문제 : (세 자리 수) × (세 자리 수)는 다음과 같은 과정을 통하여 이루어진다.
 
-![Q1](../../../images/1step_c/Q1.png)
+
+
+
 
 입력 : 첫째 줄에 (1)의 위치에 들어갈 세 자리 자연수가, 둘째 줄에 (2)의 위치에 들어갈 세자리 자연수가 주어진다.
 
@@ -528,7 +526,7 @@ int main(void) {
 
 이거는 이스케이프 시퀀스를 물어보는 것이다.
 
-![escape](../../../images/1step_c/escape.PNG)
+
 
 이것을 참고하면 지금 필요한 것은 **백 슬래시 출력**임을 알 수 있다.
 
