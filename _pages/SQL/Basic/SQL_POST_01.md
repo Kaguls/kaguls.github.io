@@ -125,6 +125,8 @@ Query all columns (attributes) for every row in the CITY table
 CITY테이블에 모든 컬럼과 모든 로우를 추출
 ```
 
+
+
 ```SQL
 SELECT * -- 컬럼명이 붙는다 (제일 큰 분류)
 FROM CITY -- 테이블명이 붙는다. (시트의 개념)
@@ -138,6 +140,8 @@ Query a list of CITY and STATE from the STATION table.
 
 City과 State를 가져와야된다. 어디서? STATION 테이블에서
 ```
+
+
 
 ```mssql
 SELECT CITY, STATE -- 컬럼인 city state
