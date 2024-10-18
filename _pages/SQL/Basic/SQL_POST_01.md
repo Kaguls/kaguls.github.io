@@ -261,3 +261,158 @@ WHERE discount LIKE '50\%' --이렇게 해주면 된다. \를 통해서 풀어�
 
 
 
+### WHERE절 요약
+
+BETWEEN은 범위검색형이고 AND와 친구다.
+
+```mssql
+WHERE BETWEEN A AND B;
+WHERE A > = B AND <= C;
+```
+
+
+
+IN = 값 목록의 지정 (SUM) + OR로 풀어쓰기 가능
+
+```mssql
+WHERE [ ] IN (A,B, C...)	
+```
+
+
+
+IS NULL / IS NOT NULL 
+
+```mssql
+WHERE [ ] IS (NOT) NULL
+```
+
+
+
+### 문제풀이
+
+```
+1. Revising the Select Query II
+문제: Query the NAME field for all American cities in the CITY table with populations larger than 120000. 
+The CountryCode for America is USA.
+
+조건
+1. 12만보다 큰 Code
+2. Country Code가 USA
+3. 큰 테이블은 CITY 컬럼은 NAME
+```
+
+```
+SELECT name
+FROM city
+WHERE population > 120000
+AND countrycode = 'USA'
+```
+
+
+
+```
+2. Select By ID
+문제 : Query all columns for a city in CITY with the ID 1661.
+
+조건
+1.모든 컬럼
+2.ID는 1661
+```
+
+```mssql
+SELECT *
+FROM citry
+WHERE ID = 1661 --숫자니까 ''안들어감
+```
+
+
+
+``` 
+3. Weather Observation Station 6
+문제: Query a list of CITY names from STATION for cities that have an even ID number. 
+Print the results in any order, but exclude duplicates from the answer.
+
+조건
+1. 테이블 City name 영어모음 시작 City 고르기
+2. 중복제거 DISTINCT 넣기
+3. 추가 답변으로 IN써보기
+```
+
+```mssql
+[1번 정답]
+SELECT DISTINCT city 
+FROM station
+WHERE city LIKE 'a%'
+OR city LIKE 'e%'
+OR city LIKE 'o%'
+OR city LIKE 'i%'
+OR city LIKE 'u%'
+
+[2번 정답]
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LEFT(CITY, 1) IN ('A', 'E', 'I', 'O', 'U')
+```
+
+나중을 생각하면 2번을 통해서 하면 가독성이 좋을 것 같아서 2번이 좋을듯 하다..!
+
+
+
+```
+4. Weather Observation Station 12
+문제: Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+조건
+1. 모음 aeiou 시작은 x 끝나지도 x
+2. 중복을 제거 (DISTINCT)
+```
+
+```mssql
+[1번정답]
+SELECT DISTINCT city
+FROM station
+WHERE city NOT LIKE 'a%'
+AND city NOT LIKE 'e%'
+AND city NOT LIKE 'i%'
+AND city NOT LIKE 'o%'
+AND city NOT LIKE 'u%' --동시니까 AND
+AND city NOT LIKE '%a'
+AND city NOT LIKE '%e'
+AND city NOT LIKE '%i'
+AND city NOT LIKE '%o'
+AND city NOT LIKE '%u'
+
+
+[2번정답]
+SELECT DISTINCT CITY
+FROM station
+WHERE lEFT(city,1) NOT IN ('a', 'i', 'e', 'o', 'u')
+AND RIGHT(city,1) NOT IN ('a', 'i', 'e', 'o', 'u')
+```
+
+이것도 가독성을 생각해서 후자가 더 편리할 것 같다.
+
+
+
+이런 의문이 든다. IN과 LIKE는 서로 어떨 때 쓰는게 유용한가?
+
+
+
+성능, 가독성부분은 LIKE보다 IN이 좋다고 한다.
+
+즉. 단순히 앞글자 뒷글자 확인후 IN의 체크가 더 좋고 가독성도 IN이 높힐 수 있다. (리스트형식)
+
+
+
+구체적인 요구사항은 LIKE가 더좋다고한다.
+
+LIKE는 문자열 패턴 매칭에 강점이 있기에 복잡한 매칭일떄 쓴다.
+
+`LIKE %pattere%`같이 특정패턴의 포함일때!
+
+
+
+
+
+## ORDER BY 정리
+
