@@ -183,7 +183,7 @@ LIKE 'r%' --뒤에 무엇이 있든 상관없는 r
 
 IN = 추가조건을 묶어준다
 
-```mssql
+```sql
 WHERE Country  IN ('Germany', 'France')
 = WHERE Country = 'Germany' OR Country='France'
 ```
@@ -196,7 +196,7 @@ IN은 마치 SUM(A, B, C..)다
 
 BETWEEN = 조건 A와 B사이 출력한다. (부분조건)
 
-```mssql
+```sql
 BETWEEN 3 AND 5
 = Where A >= 3 AND A <=5
 ```
@@ -209,7 +209,7 @@ BETWEEN 3 AND 5
 
 IS NULL = NULL값 탐색
 
-```mssql
+```sql
 -- IS NULL (NULL값 찾기)
 WHERE A IUNULL;
 ```
@@ -228,7 +228,7 @@ NULL = Nam = Not a Number이다.
 
 
 
-```mssql
+```sql
 WHERE Country LIKE 'Brazil'
 = WHERE Country = 'Brazil'
 ```
@@ -241,7 +241,7 @@ LIKE보다는 = 가 더 처리가 빠르다.
 
 언더바도 추가시킬 수 있다.
 
-```mssql
+```sql
 LIKE 'b%' -- B로 시작하는 단어 찾기
 LIKE 'b_____' -- _5개로 b이후 5개만 찾기
 ```
@@ -250,7 +250,7 @@ LIKE 'b_____' -- _5개로 b이후 5개만 찾기
 
 
 
-```mssql
+```sql
 WHERE discount LIKE '50%' -- 이러면 %가 문제가 생기는데
 WHERE discount LIKE '50\%' --이렇게 해주면 된다. \를 통해서 풀어준다고 보면 됨.
 ```
@@ -269,7 +269,7 @@ WHERE discount LIKE '50\%' --이렇게 해주면 된다. \를 통해서 풀어�
 
 BETWEEN은 범위검색형이고 AND와 친구다.
 
-```mssql
+```sql
 WHERE BETWEEN A AND B;
 WHERE A > = B AND <= C;
 ```
@@ -278,7 +278,7 @@ WHERE A > = B AND <= C;
 
 IN = 값 목록의 지정 (SUM) + OR로 풀어쓰기 가능
 
-```mssql
+```sql
 WHERE [ ] IN (A,B, C...)	
 ```
 
@@ -286,7 +286,7 @@ WHERE [ ] IN (A,B, C...)
 
 IS NULL / IS NOT NULL 
 
-```mssql
+```sql
 WHERE [ ] IS (NOT) NULL
 ```
 
@@ -305,7 +305,7 @@ The CountryCode for America is USA.
 3. 큰 테이블은 CITY 컬럼은 NAME
 ```
 
-```
+```sql
 SELECT name
 FROM city
 WHERE population > 120000
@@ -323,7 +323,7 @@ AND countrycode = 'USA'
 2.ID는 1661
 ```
 
-```mssql
+```sql
 SELECT *
 FROM citry
 WHERE ID = 1661 --숫자니까 ''안들어감
@@ -342,7 +342,7 @@ Print the results in any order, but exclude duplicates from the answer.
 3. 추가 답변으로 IN써보기
 ```
 
-```mssql
+```sql
 [1번 정답]
 SELECT DISTINCT city 
 FROM station
@@ -371,7 +371,7 @@ WHERE LEFT(CITY, 1) IN ('A', 'E', 'I', 'O', 'U')
 2. 중복을 제거 (DISTINCT)
 ```
 
-```mssql
+```sql
 [1번정답]
 SELECT DISTINCT city
 FROM station
