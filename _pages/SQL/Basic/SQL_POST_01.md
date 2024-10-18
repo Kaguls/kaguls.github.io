@@ -420,3 +420,109 @@ LIKE는 문자열 패턴 매칭에 강점이 있기에 복잡한 매칭일떄 �
 
 ## ORDER BY 정리
 
+정렬하기 = ORDER BY 
+
+
+
+```sql
+SELECT *
+FROM Customers
+WHERE -
+ORDER BY customerid DESC --(내림차순)
+ORDER BY Customerid ASC --(오름차순) - Default
+```
+
+```sql
+--응용하면?
+ORDER BY Price DESC --특정 테이블 가격의 내림차순
+
+--조건으로 상단에 추가
+WHERE price >=20
+ORDER BY 
+```
+
+
+
+### 문제풀기
+
+```
+1.Employee Names
+문제: Write a query that prints a list of employee names (i.e.: the name attribute) 
+from the Employee table in alphabetical order.
+
+조건
+1. list of employee names
+2. ASC (aplhabetical order)
+3. Talbe : employee
+```
+
+```sql
+SELECT name
+FROM employee
+ORDER BY name ASC
+```
+
+
+
+```
+2.Employee Salaries
+문제: Write a query that prints a list of employee names (i.e.: the name attribute) for employees in Employee having a salary greater than  per month who have been employees for less than  months. 
+Sort your result by ascending employee_id.
+
+조건
+1.월 2000$ 이상
+2.근무 10달 미만
+3.ID정렬
+```
+
+```sql
+SELECT name 
+FROM employee
+WHERE salary > 2000 
+AND months < 10 
+ORDER BY employee_id  
+```
+
+
+
+### 간단함수 설명 및 문제풀이
+
+```
+LEFT = 왼 , RIGHT = 오
+SUBSTRING = 시작위치~ n까지
+= SUBSTR (약자)
+
+ORDER BY RIGHT (name,3), id
+조건절의 두번째는 뒤로 
+```
+
+여기서 생각한게 ORDER BY에 _ 표현이 들어갈 수 있을까?
+
+=> NO였다. ORDER BY는 컬럼이나 표현식 정렬이기에 와일드카드는 불가능 (NOT 문자열)
+
+
+
+```
+1. Weather Observation Station 15
+문제: Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than 137.2345. Round your answer to 4 decimal places.
+
+조건
+1.쿼리 LONG_W 부르기
+2.LAT_N보다 큰것
+3. STATION 테이블
+4. ROUND함수 사용
+5. Less than 137.2345보다 작은
+6. 소수점 n자리 SELECT
+7. 최대한개만 출력 
+```
+
+```sql
+SELECT ROUND (LONG_W,4)
+FROM station
+WHERE LAT_N < 137.2345
+ORDER BY LAN_T_N DESC
+```
+
+
+
+끝.
