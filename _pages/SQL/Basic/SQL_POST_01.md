@@ -154,7 +154,7 @@ FROM STATION -- 테이블인 STATION
 
 
 
-```mssql
+```sql
 WHERE Country = 'Germany'
 WHERE Customer ID <50 .. Customer <>20..
 AND Country='Germany'
@@ -170,7 +170,7 @@ AND Country='Germany'
 
 LIKE = 문자열에서 패턴을 찾는다.
 
-```mssql
+```sql
 LIKE '%r' --앞에 무엇이 있든 상관없는 r
 LIKE 'r%' --뒤에 무엇이 있든 상관없는 r
 ```
