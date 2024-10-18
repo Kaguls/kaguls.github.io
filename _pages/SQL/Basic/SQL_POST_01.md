@@ -143,7 +143,7 @@ City과 State를 가져와야된다. 어디서? STATION 테이블에서
 
 
 
-```mssql
+```sql
 SELECT CITY, STATE -- 컬럼인 city state
 FROM STATION -- 테이블인 STATION 
 ```
