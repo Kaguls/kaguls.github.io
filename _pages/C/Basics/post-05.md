@@ -1,5 +1,5 @@
 ---
-title: "[C언어의 기본]-문제풀이1"
+title: "[C언어의 기본]-도전프로그래밍1 문제풀이"
 date: "2024-07-23"
 thumbnail: "/assets/img/thumbnail/C.png"
 

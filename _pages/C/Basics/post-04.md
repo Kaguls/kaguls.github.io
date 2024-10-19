@@ -1,5 +1,5 @@
 ---
-title: "[C언어의 기본] #4"
+title: "[C언어의 기본] 함수와 전역지역변수"
 date: "2024-07-23"
 thumbnail: "/assets/img/thumbnail/C.png"
 

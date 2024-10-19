@@ -1,6 +1,6 @@
 ---
 
-title: "[C언어의 기본] #3"
+title: "[C언어의 기본] 반복문과 조건문"
 date: "2024-07-05"
 thumbnail: "/assets/img/thumbnail/C.png"
 

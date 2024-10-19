@@ -1,5 +1,5 @@
 ---
-title: "[C언어의 기본] #1"
+title: "[C언어의 기본] 기본 연산자와 함수"
 date: "2024-06-17"
 thumbnail: "/assets/img/thumbnail/C.png"
 ---
