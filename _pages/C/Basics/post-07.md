@@ -2,7 +2,6 @@
 title: "[C언어의 기본]포인터와 배열"
 date: "2024-10-19"
 thumbnail: "/assets/img/thumbnail/C.png"
-
 ---
 
 # 포인터
