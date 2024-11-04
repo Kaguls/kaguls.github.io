@@ -297,15 +297,16 @@ FROM city
 WHERE district = "California"
 ```
 
-위의 문제와 조건은 같은데
+이거는 위의 문제랑 비슷한데 그냥 집계함수만
 
-집계함수만 바꾸면 되는 문제라서 패스.
+변경하면되는 문제다.
 
 
 
 ```sql
 -- Average Population
-
+SELECT FLOOR(AVG(population))
+FROM city
 ```
 
 
