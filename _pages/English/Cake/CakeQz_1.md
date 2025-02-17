@@ -1,7 +1,7 @@
 ---
 title: "Cake 퀴즈 누적형"
 date: "2025-02-13"
-thumbnail: "/assets/img/thumbnail/cake_app.png"
+thumbnail: "/assets/img/thumbnail/cake.png"
 
 
 ---
