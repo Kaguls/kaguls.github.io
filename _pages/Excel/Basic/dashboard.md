@@ -1,7 +1,7 @@
 ---
 title: "엑셀 대시보드 제작"
 date: "2025-02-16"
-thumbnail: "/assets/img/thumbnail/excel.jpg"
+thumbnail: "/assets/img/thumbnail/Excel.jpg"
 ---
 
 ## 엑셀 대시보드 제작
