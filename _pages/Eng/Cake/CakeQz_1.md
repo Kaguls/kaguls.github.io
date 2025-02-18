@@ -72,3 +72,20 @@ Our salaries will be depoited tomorrow
 
 아마 현재, 현재완료진행, 미래 완료 형의 3가지 형태를 나타내는 듯?
 
+
+
+#### 4일차
+
+what are the odds
+이런 우연이 있나? 
+
+odds* = 가능성의 뜻으로 쓰인듯 함.
+
+what are the chances
+그럴 확률이 얼마나 되나요?
+
+
+This is a sure thing
+이건 확실하다.
+
+= 무언가 일어나거나 성공하는 관용구
