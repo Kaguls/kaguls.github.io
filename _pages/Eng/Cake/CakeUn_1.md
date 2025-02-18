@@ -116,4 +116,10 @@ How's school?
 
 
 
+아마 How's it going을 분석하면
+
+it (여러가지)것들의 going(흐름) 걷다보다는 흐름의 초점에 맞춰준 문제인듯?
+
+
+
 Unit 1 끝.
