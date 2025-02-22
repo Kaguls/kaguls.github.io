@@ -159,7 +159,7 @@ thumbnail: "/assets/img/thumbnail/Palia.jpg"
 
 
 
-## 분석
+# 분석
 
 [코어키워드_CoreKeyWord]
 
@@ -227,7 +227,7 @@ thumbnail: "/assets/img/thumbnail/Palia.jpg"
 
 
 
-# 장점
+## 장점
 
 - 기존에 없던 생활형 MMO 느낌이라는 경쟁없는 느낌을 형성
 
@@ -245,7 +245,7 @@ thumbnail: "/assets/img/thumbnail/Palia.jpg"
 
 
 
-# 단점
+## 단점
 
 - 무언가.. 서양감성이 난다?
 
@@ -261,7 +261,7 @@ thumbnail: "/assets/img/thumbnail/Palia.jpg"
 
 
 
-## 총평
+# 총평
 
 시뮬레이션 장르, RPG, 오픈월드 장르 게임을 좋아하고
 
