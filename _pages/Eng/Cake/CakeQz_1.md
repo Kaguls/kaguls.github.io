@@ -89,3 +89,42 @@ This is a sure thing
 이건 확실하다.
 
 = 무언가 일어나거나 성공하는 관용구
+
+
+
+#### 5일차
+
+I was just at a loss for words.
+저는 그냥 말문이 막혔습니다.
+
+I was Speechless
+말문이 막혔어요
+= 보통 놀라거나 화났거나 기분이 안좋아서 말못하는 상태
+
+I had a lot to say
+할말이 많았어요
+= 나는 하고 싶은거같다 to say 말
+
+악감정은 없어요
+No hard feelings
+[Hard는 부정적감정]
+
+원한은 없어
+There's no bad blood
+
+당신을 용서할 수 없어
+I can't forgive you
+
+
+
+#### 6일차
+
+keep the change
+잔돈은 됐어요.
+
+You can keep the rest
+나머지는 가지세요
+
+Can you come down a liitle bit?
+가격을 좀 내려주실수 있나요?
+=come down 쪽에서 파생된건가?
