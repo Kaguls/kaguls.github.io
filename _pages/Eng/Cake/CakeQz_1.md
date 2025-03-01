@@ -1,5 +1,5 @@
 ---
-title: "Cake 퀴즈 누적형"
+title: "(과거)Cake공부"
 date: "2025-02-13"
 thumbnail: "/assets/img/thumbnail/cake.png"
 
@@ -8,9 +8,9 @@ thumbnail: "/assets/img/thumbnail/cake.png"
 
 # 케이크어플 퀴즈 누적형 데이터
 
-게시글은 Cake 어플로 영어공부를 시작하였으며, 
+게시글은 Cake 어플로 영어공부를 시작했으나,
 
-네이버 멤버쉽으로 주는 거로 시작했다. 간단하게 일본어 회화 접근하듯이 해보고자 한다.
+다른 것으로 변경하기로 해서 해당 내용은 저장만 하고 들여다보는 용으로 사용하기로 했다.
 
 1, 20....단위로 구성하고 찾아서 쓸 것이다.
 
@@ -128,3 +128,91 @@ You can keep the rest
 Can you come down a liitle bit?
 가격을 좀 내려주실수 있나요?
 =come down 쪽에서 파생된건가?
+
+
+
+#### 7일차
+
+저는 잠귀가 밝아요.
+I'm a light Sleeper 
+= Light는 쉽게 깬다 
+
+저는 쉽게 일어나요
+I wake sleep easily
+
+저는 세상 모르게 자요.
+I Sleep like a log
+=나는 통나무처럼 잔다
+
+
+
+#### 8일차
+
+지금은 10시 반 이에요
+It's half past ten
+n시 반 = half past
+
+열시 반이에요
+It's ten-thirty 10-30
+
+아직 10시도 안됐어요.
+It's not even close to ten
+아직 안됐다 10시가.
+
+2시 5분
+five past two
+분 past 시
+
+
+
+#### 9일차
+
+지금은 10시 반 이에요
+It's half past ten
+n시 반 = half past
+
+열시 반이에요
+It's ten-thirty 10-30
+
+아직 10시도 안됐어요.
+It's not even close to ten
+아직 안됐다 10시가.
+
+2시 5분
+I'm sorry about last night
+어젯밤 미안해요
+I'm sorry about the noise
+시끄러워서 미안해요
+I'm sorry about forgetting your birthday
+생일을 잊어서 미안해요.
+=> forgetting 기억하지 못하다는 의미.
+
+I'm sorry about the misunderstanding we had.
+오해가 있어서 죄송합니다.
+misunderstanding => 올바르게 이해하지 못한 것
+
+I'm sorry about the inconvenience  I caused at the meeting
+회의 중에 불편을 끼쳐드려 죄송합니다.
+inconvenience (인킨븨니언스) : 불편
+caused(커스드) : 원인
+
+
+
+#### 10일차
+
+Can we talk privately?
+우리 둘만 얘기할 수 있을까요?
+
+Can I discuss something else with you?
+다른 이야기를 해도 괜찮을까요?
+
+Let's continue this in my office
+제 사무실에서 계속 이야기 하죠.
+
+이 대화를 직접 만나서 할 수 있을까요?
+Can we take this offline conversation?
+
+
+
+
+
