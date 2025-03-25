@@ -218,7 +218,7 @@ why? 동작하지 못하게 세팅이 되어있어서 짤라야된다고 함
 
 ```sql
 -- 정답
-DELECT
+DELETE
 FROM Person
 WHERE ID Not in (
 SELECT sub.min_id
