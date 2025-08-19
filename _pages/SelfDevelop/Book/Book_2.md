@@ -1,6 +1,6 @@
 ---
 title: "게임 기획 스쿨 정리"
-date: "2025-08-19"
+date: "2025-08-18"
 thumbnail: "/assets/img/thumbnail/Plan.jpg"
 
 ---
