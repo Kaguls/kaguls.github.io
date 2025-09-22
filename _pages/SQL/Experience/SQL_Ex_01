@@ -1,0 +1,91 @@
+---
+title: "SQL 데이터 분석"
+date: "2025-09-21"
+thumbnail: "/assets/img/thumbnail/postsql.jpg"
+---
+
+## 개요
+
+데이터분석가, 데이터사이언티스트, 분석개발자, 데이터 엔지니어와 같이 SQL을 통한 
+
+상품과 서비스를 개선시킬 수 있는 분석결과를 도출하고, 
+
+이를 지원할 수 있는 역량을 갖춘다.
+
+
+
+> 실전분석의 SQL쿼리 : 매출분석, 주문분석  등의 도메인 + 그로스해킹영역
+
+
+
+기술스텍 : PostgreSQL , DBeaver 
+
+
+
+1.SQL Alchemy에서 PostgreSQL에 Connection연결
+
+2.Pandas는 SQLAlchemy로 만든 DB Con이용하여 SQL호출 후 결과를 DF에 저장
+
+3.Plotly(python기반 시각화)는 DF와 연동하여 시각화를 수행한다.
+
+
+
+왜? Pandas의 연계?
+
+Plotly가 Pandas(DF)와 연계되기 쉬움 (X축과 Y축을 구현해서 쉽게 시각화를 만들 수 있음.)
+
+우리의 Data는 PostgreSQL에 있음. 이때 Pandas의 데이터 넣는 작업은 SQLAlchemy가 해줌.
+
+
+
+일단 차트중에서는
+
+1. 바차트 - 특정컬럼 이산 값(X축)에 따른 다른 컬럼의 연속형 값을 시각화
+2. 라인차트 - 시계열 데이터(Tiem Data)를 시각화 하며 X축 일자, Y축에 연속형 값으로 시각화
+3. 
+
+
+
+#### 연동
+
+```python
+import pandas as pd 
+#pandas 라이브러리를 불러온후 별칭 pd지정
+from sqlalchemy import create_engine
+#SQLAlchemy에서 Create_engine 함수를 불러봄. 
+#(DB를 상호작용 하는 도구) (create_engine은 엔진 객체의 생성)
+```
+
+```python
+conn_string = 'postgresql://postgres:pw@localhost:port/postgres'
+#DB접속에 대한 정보를 나타냄 (종류:사용자이름:PW@호스트이름:port:DB이름)
+postgres_engine = create_engine(conn_string)
+#DB엔진을 생성합니다. (conn-string을 전달하여 DB연결을 관리하는 Postgres_engine객체 생성)
+#해당 엔진 객체는 Pandas의 Read_sql(query)과 같은 함수를 통해 DB작업 가능.
+```
+
+
+
+#### 예시1
+
+```python
+to_date('2022-04-20', 'yyyy-mm-dd')
+#To_date를 통해 날짜타입으로 변환함.
+#2022-04-20은 변환할 날짜정보 문자열
+#yyyy-mm-dd는 형식패턴임.
+#즉, 2022-04-20이라는 문자열을 2022-04-20이라는 날짜데이터로 인식하게 하기.
+
+query = """
+select * from nw.customers
+"""
+df = pd.read_sql_query(sql=query, con=postgres_engine)
+df.head(10)
+#Query변수에 SQL쿼리문을 문자열 형태로 저장함.
+#Select - 는 nw스키마 customers 테입르의 모든 데이터를 선택함.
+
+#df는 pd.read_sql_query()는 Pandas함수이며 DF로 읽어오게 하는것.
+#sql = Query는 실행할 쿼리를 인자로 넘겨줌.
+#con=psotgres_en.. 연결에 사용할 DB엔진을 지정하여 접속
+#df.head(10): df라는 변수의 DF형태로 저장하는데 상위 10개만 출력하는것 TOP형식느낌
+```
+
